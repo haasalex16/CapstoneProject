@@ -4,6 +4,7 @@
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+username        | string    | not null, unique
 email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
@@ -24,7 +25,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users)
 title       | string    | not null
-filename    | string    | not null
+upload_id   | string    | not null
 
 ## tags
 column name | data type | details

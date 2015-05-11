@@ -1,23 +1,23 @@
 # View Wireframes
 
-## New Session
+## New Session / User
 
 
 
-#User Feed Show
+##User Feed Show
 
 
 
-#Playlist Show
+
+##Upload Form
 
 
 
-#Upload Form
+##User Show
+
+
+##Create Playlist
 
 
 
-#Create Playlist
-
-
-
-#Search Results
+##Search Results
