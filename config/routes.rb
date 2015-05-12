@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session, only: [:create, :new, :destroy]
+  resources :songs
 
   namespace :api, defaults: {format: :json} do
-    resources :songs, only: [:create, :new, :destroy, :update]
+    resources :songs
   end
 end

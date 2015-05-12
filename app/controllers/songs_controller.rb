@@ -13,7 +13,11 @@ class SongsController < ApplicationController
       flash[:errors] = @song.errors.full_messages
       render json: @song
     end
+  end
 
+  def index
+    @songs = current_user.songs
+    render json: @songs
   end
 
   private
