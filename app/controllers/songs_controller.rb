@@ -2,7 +2,7 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
-
+    render json: @song
   end
 
   def create
@@ -11,7 +11,7 @@ class SongsController < ApplicationController
       render json: @song
     else
       flash[:errors] = @song.errors.full_messages
-      render :new
+      render json: @song
     end
 
   end

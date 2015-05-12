@@ -5,6 +5,8 @@ window.EclecticEar = {
   Routers: {},
   initialize: function() {
     alert('START!');
+    new EclecticEar.Routers.Router({$rootEl: $('#main')});
+    Backbone.history.start();
   }
 };
 //
