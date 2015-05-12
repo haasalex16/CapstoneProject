@@ -1,0 +1,10 @@
+<h1>Upload Song</h1>
+
+<form action="<%= songs_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Title:</label>
+  <input type="text" name="song[title]" value="<%= @song.title %>">
+  <label>Upload Url:</label>
+  <input type="text" name="song[upload_id]" value="<%= @song.upload_id %>">
+  <button>Upload</button>
+</form>

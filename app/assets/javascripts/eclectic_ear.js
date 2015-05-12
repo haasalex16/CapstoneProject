@@ -4,10 +4,10 @@ window.EclecticEar = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    alert('START!');
   }
 };
-
-$(document).ready(function(){
-  EclecticEar.initialize();
-});
+//
+// $(document).ready(function(){
+//   EclecticEar.initialize();
+// });
