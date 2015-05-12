@@ -9,9 +9,9 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
   },
 
   songIndex: function() {
-    // EclecticEar.Collections.songs.fetch()
-    // var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
-    // this._swapView(view);
+    EclecticEar.Collections.songs.fetch();
+    var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
+    this._swapView(view);
   },
 
   _swapView: function (view) {
@@ -20,7 +20,7 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     }
 
     this.currentView = view;
-    this.$rootEl.hmtl(view.render().$el);
+    this.$rootEl.html(view.render().$el);
   }
 
 });

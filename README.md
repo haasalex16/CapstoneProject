@@ -1,8 +1,8 @@
 # EclecticEar
 
-Coming Soon...
-
 [Heroku link][heroku]
+
+[heroku]: https://eclectic-ear.herokuapp.com
 
 ## Minimum Viable Product
 EclecticEar is a clone of SoundCloud built on Rails and Backbone and
