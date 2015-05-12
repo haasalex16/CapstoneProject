@@ -8,6 +8,32 @@
 </head>
 <body>
 
+<header class="group">
+  <h1 class="logo">EclecticEar</h1>
+  <nav>
+    <% if logged_in? %>
+      <p class="nav-links">
+        <%= current_user.username %>
+      </p>
+
+      <form class="nav-links"
+            action="<%=session_url%>"
+            method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input  type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+        <button>Log Out</button>
+      </form>
+    <% else %>
+      <a class="nav-links" href="<%=new_session_url%>">Sign In</a>
+      <a class="nav-links" href=" <%= new_user_url %> ">Sign Up</a>
+    <% end %>
+  </nav>
+</header>
+
+<%= render "shared/errors" %>
+
 <%= yield %>
 
 </body>

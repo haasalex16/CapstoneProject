@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+html, h1, nav, a, body,
+header, ul, li, p, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+}
+
+/*clear fix*/
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header {
+  background: #3E94F7;
+}
+
+nav {
+  float: right
+}
+
+.logo {
+  padding: 10px;
+  float: left;
+  font-weight: 700;
+  font-size: 26px
+}
+.nav-links {
+  float: left;
+  padding: 5px
+}
+
+.sign-in {
+  background: #3E94F7;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.sign-in label, .sign-in input {
+  margin: 10px;
+}
