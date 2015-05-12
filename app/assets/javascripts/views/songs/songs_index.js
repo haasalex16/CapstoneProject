@@ -5,6 +5,10 @@ EclecticEar.Views.SongsIndex = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render);
+    var formView = new EclecticEar.Views.SongForm({
+                    collection: this.collection,
+                    });
+    this.addSubview(".add-form", formView);
   },
 
   render: function() {
@@ -13,6 +17,7 @@ EclecticEar.Views.SongsIndex = Backbone.CompositeView.extend ({
     this.collection.forEach(function(song){
       this.addSong(song);
     }.bind(this));
+
 
     this.attachSubviews();
 
