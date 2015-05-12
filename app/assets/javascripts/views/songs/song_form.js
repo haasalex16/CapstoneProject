@@ -25,6 +25,9 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
       success: function(){
         collection.add(song, {merge: true});
         Backbone.history.navigate("", {trigger: true});
+      },
+      error: function() {
+        Backbone.history.navigate("", {trigger: true});
       }
     })
   }

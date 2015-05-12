@@ -11,7 +11,7 @@ class Api::SongsController < ApplicationController
       render json: @song
     else
       flash[:errors] = @song.errors.full_messages
-      render json: @song
+      render json: @song.errors, status: 422
     end
   end
 
