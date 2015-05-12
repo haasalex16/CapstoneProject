@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, h1, nav, a, body,
+html, h1, h2, nav, a, body,
 header, ul, li, p, button {
   margin: 0;
   padding: 0;
@@ -64,4 +64,22 @@ nav {
 
 .sign-in label, .sign-in input {
   margin: 10px;
+}
+
+.feed {
+  width: 400px;
+  margin: 10px auto;
+  border: 2px solid black;
+}
+
+.feed h1 {
+  text-align: center;
+
+}
+
+.song-show {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #3E94F7;
+  border-radius: 15px;
 }
