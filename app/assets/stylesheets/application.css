@@ -113,3 +113,14 @@ nav {
   color: orange;
   width: 430px;
 }
+
+.uploader h1 {
+  padding: 10px;
+  text-align: center;
+}
+
+.uploader {
+  width: 300px;
+  margin: 10px auto;
+  border: solid black 1px;
+}

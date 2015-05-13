@@ -3,6 +3,8 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
 
   tagName: 'form',
 
+  className: 'uploader',
+
   events: {
     'click button': 'submit'
   },
