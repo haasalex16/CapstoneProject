@@ -1,7 +1,7 @@
 EclecticEar.Views.SongsIndex = Backbone.CompositeView.extend ({
   template: JST['songs/index'],
 
-  className: 'feed',
+  className: 'feed group',
 
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render);

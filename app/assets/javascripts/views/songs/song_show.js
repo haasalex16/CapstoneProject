@@ -3,6 +3,8 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
 
   tagName: 'li',
 
+  className: 'song-show',
+
   render: function() {
     var view = this.template({song: this.model});
     this.$el.html(view);
