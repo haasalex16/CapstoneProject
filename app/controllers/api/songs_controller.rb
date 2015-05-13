@@ -17,7 +17,12 @@ class Api::SongsController < ApplicationController
 
   def index
     @songs = current_user.songs
-    render json: @songs
+    render :index
+  end
+
+  def show
+    @song = Song.find(params[:id])
+    render json: @song
   end
 
   private
