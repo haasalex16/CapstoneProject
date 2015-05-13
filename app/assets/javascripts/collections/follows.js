@@ -1,4 +1,4 @@
 EclecticEar.Collections.Follows = Backbone.Collection.extend({
-  url: '/api/follows',
+  url: '/api/users/:user_id/follows',
   model: EclecticEar.Models.Follow
 });

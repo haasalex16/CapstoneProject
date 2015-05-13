@@ -1,3 +1,3 @@
 EclecticEar.Models.Follow = Backbone.Model.extend({
-  urlRoot: '/api/follows'
+  urlRoot: '/api/users/:user_id/follows'
 });
