@@ -3,7 +3,7 @@
    <% users.each(function(user) { %>
      <li class='user-thumb'>
      <%= user.escape('username') %>
-     <button class='follow' data-id=" <%=user.get('id') %>">Follow</button>
+     <button class='follow' data-id="<%=user.get('id') %>">Follow</button>
      </li>
     <% }) %>
  </ul>
