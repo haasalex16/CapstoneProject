@@ -19,7 +19,6 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var attrs = $(this.$el).serializeJSON();
-    console.log(attrs);
     var song = new EclecticEar.Models.Song()
     var collection = this.collection;
     song.set(attrs);

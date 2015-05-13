@@ -4,17 +4,17 @@ EclecticEar.Views.SongsIndex = Backbone.CompositeView.extend ({
   className: 'feed group',
 
   initialize: function() {
+    this.collection.forEach(function(song){
+      this.addSong(song);
+    }.bind(this));
+
     this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function() {
-    this.collection.forEach(function(song){
-      this.addSong(song);
-    }.bind(this));
+    console.log('rendered');
     var view = this.template({songs: this.collection});
     this.$el.html(view);
-
-
     this.attachSubviews();
 
     return this;

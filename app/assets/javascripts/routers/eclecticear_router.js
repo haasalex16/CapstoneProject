@@ -11,9 +11,12 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
   },
 
   songIndex: function() {
-    EclecticEar.Collections.songs.fetch();
-    var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
-    this._swapView(view);
+    EclecticEar.Collections.songs.fetch({
+      success: function() {
+        var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
+        this._swapView(view);
+      }.bind(this)
+    });
   },
 
   songForm: function(){
