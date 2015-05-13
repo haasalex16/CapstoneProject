@@ -15,7 +15,6 @@ EclecticEar.Views.SongsIndex = Backbone.CompositeView.extend ({
     this.collection.forEach(function(song){
       this.addSong(song);
     }.bind(this));
-    debugger;
     var view = this.template({songs: this.collection});
     this.$el.html(view);
 
