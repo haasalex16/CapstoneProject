@@ -8,9 +8,9 @@
 EclecticEar is a clone of SoundCloud built on Rails and Backbone and
 utilizing Amazon S3 to store files. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Upload Music
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create Music Information
 - [ ] Follow Other Users
 - [ ] Uploaded Music and Followed User's Music Adds to User Feed
 - [ ] Tag Music
@@ -18,6 +18,7 @@ utilizing Amazon S3 to store files. Users can:
 - [ ] Search for Songs and Playlist by Title
 - [ ] Search for Users/Artists
 - [ ] Repost Music to Feed
+- [ ] Upload Music and Stream
 
 ## Design Docs
 * [View Wireframes][views]
@@ -38,7 +39,7 @@ moving on to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Following Users and Update Feed (1 day)
+### Phase 2: Following Users and Update Feed (~2 days)
 I will add the ability to see the other user's show pages as well as follow them.
 Once following a user, their songs will show up on your feed.  Once again this
 will still be a basic SongView until the completion of Phase 3.
