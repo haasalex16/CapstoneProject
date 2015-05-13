@@ -124,3 +124,19 @@ nav {
   margin: 10px auto;
   border: solid black 1px;
 }
+
+.user-thumb {
+  float: left;
+  background: #bbb;
+  width: 130px;
+  height: 130px;
+  margin: 10px;
+}
+
+.user-thumb button {
+  padding: 5px;
+  border: 1px black solid;
+}
+.user-thumb button:hover {
+  background: orange;
+}

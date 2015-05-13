@@ -1,5 +1,5 @@
 EclecticEar.Collections.Songs = Backbone.Collection.extend ({
-  url: 'api/songs',
+  url: '/api/songs',
 
   model: EclecticEar.Models.Song,
 

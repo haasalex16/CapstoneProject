@@ -1,5 +1,6 @@
-EclecticEar.Collections.Users = Backbone.Collection.extend({
+EclecticEar.Collections.Users = Backbone.Collection.extend ({
   url: '/api/users',
+
   model: EclecticEar.Models.User,
 
   comparator: function(user) {
