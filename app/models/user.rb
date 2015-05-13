@@ -9,7 +9,22 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :session_token, presence: true, uniqueness: true
 
-  has_many :songs
+  has_many :songs, dependent: :destroy
+  has_many :in_follows,
+    class_name: 'Follow',
+    foreign_key: 'followee_id',
+    primary_key: 'id'
+  has_many :out_follows,
+    class_name: 'Follow',
+    foreign_key: 'follower_id',
+    primary_key: 'id'
+  has_many :followers,
+    through: :in_follows,
+    source: :follower
+  has_many :followees,
+    through: :out_follows,
+    source: :followee
+
 
   def self.find_by_credentials (username, password)
     user = User.find_by(username: username)
