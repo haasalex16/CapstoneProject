@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all.where('id != ' + current_user.id.to_s)
-    render json: @users
+    render :index
   end
 
   private
