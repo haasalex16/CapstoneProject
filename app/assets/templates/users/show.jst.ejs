@@ -4,7 +4,19 @@
   <img  class='user-thumb' src="" alt="" />
   <p>Followers</p>
   <p>SongCount</p>
-  <button class='follow' data-id="<%=user.get('id') %>">Follow</button>
+  <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
+
+  <% } else if (user.get("follow") === true)  { %>
+   <button class='follow'
+           data-id="<%=user.get('id') %>">
+           Unfollow
+   </button>
+ <% } else { %>
+   <button class='follow'
+           data-id="<%=user.get('id') %>">
+           Follow
+   </button>
+ <% } %>
 
 </span>
 

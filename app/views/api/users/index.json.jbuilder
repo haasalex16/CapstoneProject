@@ -2,6 +2,7 @@ json.array! @users do |user|
   json.id       user.id
   json.username user.username
   json.email    user.email
+  json.follow   current_user.follow?(user)
   json.followers   user.followers do |follower|
     json.id       follower.id
     json.username follower.username

@@ -15,9 +15,8 @@
     <a class="nav-links" href="#/upload">Upload</a>
     <a class="nav-links" href="#/users">Users</a>
     <% if logged_in? %>
-      <p class="nav-links">
-        <%= current_user.username %>
-      </p>
+      <a href="#/users/<%= current_user.id%>" class="nav-links"><%= current_user.username %>
+      </a>
 
       <form class="nav-links"
             action="<%=session_url%>"
