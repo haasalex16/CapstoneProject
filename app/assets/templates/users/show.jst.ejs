@@ -1,25 +1,27 @@
-<span class='sidebar'>
+<span class='user-show-sidebar'>
 
+  <h2> <%= user.escape('username') %> </h2>
+  <p>
+    City
+  </p>
+  <p>
+    Followers
+  </p>
+  <p>
+    SongCount
+  </p>
+  <button class='follow' data-id="<%=user.get('id') %>">Follow</button>
+  <p>
+    website
+  </p>
+  <p>
+    Facebook
+  </p>
+  <p>
+    twitter
+  </p>
 
-<h2> <%= user.escape('username') %> </h2>
-<p>
-  City
-</p>
-<p>
-  Followers
-</p>
-<p>
-  SongCount
-</p>
-<button class='follow' data-id="<%=user.get('id') %>">Follow</button>
-<p>
-  website
-</p>
-<p>
-  Facebook
-</p>
-<p>
-  twitter
-</p>
+</span>
+<span class='user-show-feed'>
 
 </span>
