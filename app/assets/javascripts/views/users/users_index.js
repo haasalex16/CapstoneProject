@@ -7,7 +7,6 @@ EclecticEar.Views.UsersIndex = Backbone.CompositeView.extend ({
   },
 
   initialize: function () {
-    this.listenTo(EclecticEar.Collections.follows, "remove", this.render);
     this.listenTo(this.collection, 'sync', this.render);
   },
 
@@ -23,9 +22,9 @@ EclecticEar.Views.UsersIndex = Backbone.CompositeView.extend ({
     var id = $(event.currentTarget).attr('data-id');
     var follow = new EclecticEar.Models.Follow({followee_id: id});
     follow.save({},{
-      success: function() {
-        Backbone.history.navigate("/",{trigger: true});
-      }
+      success: function(){
+        this.collection.fetch();
+      }.bind(this)
     })
   },
 
@@ -36,12 +35,11 @@ EclecticEar.Views.UsersIndex = Backbone.CompositeView.extend ({
         var model = EclecticEar.Collections.follows.findWhere({followee_id: parseInt(id)});
         model.destroy({
           success: function() {
-            EclecticEar.Collections.follows.remove(model);
-          }
+            this.collection.fetch();
+          }.bind(this)
         });
-      }
+      }.bind(this)
     });
-
   }
 
 });
