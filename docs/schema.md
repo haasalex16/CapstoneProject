@@ -13,12 +13,10 @@ session_token   | string    | not null, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references followee(user))
+followee_id     | integer   | not null, foreign key (references followee(user))
 follower_id | integer   | not null, foreign key (references follower(user))
 
 ## songs
-
-(need to look into uploading mp3 files further...)
 
 column name | data type | details
 ------------|-----------|-----------------------

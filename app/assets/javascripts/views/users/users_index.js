@@ -11,7 +11,6 @@ EclecticEar.Views.UsersIndex = Backbone.CompositeView.extend ({
   },
 
   render: function() {
-    console.log("rendered!");
     var view = this.template({users: this.collection})
     this.$el.html(view);
 

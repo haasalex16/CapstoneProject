@@ -11,7 +11,7 @@ utilizing Amazon S3 to store files. Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Create Music Information
-- [ ] Follow Other Users
+- [x] Follow Other Users
 - [x] Uploaded Music and Followed User's Music Adds to User Feed
 - [ ] Tag Music
 - [ ] Create Playlists
