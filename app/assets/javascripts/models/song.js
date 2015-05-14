@@ -4,4 +4,5 @@ EclecticEar.Models.Song = Backbone.Model.extend ({
   parse: function(response) {
     return response;
   }
+
 });

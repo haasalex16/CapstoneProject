@@ -3,7 +3,9 @@ window.EclecticEar = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
+  initialize: function(options) {
+    this.currentUser = new EclecticEar.Models.User({id: options.current_user_id});
+    this.currentUser.fetch();
     new EclecticEar.Routers.Router({$rootEl: $('#main')});
     Backbone.history.start();
   }

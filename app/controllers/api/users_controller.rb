@@ -21,7 +21,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.where('id != ' + current_user.id.to_s)
+    @users = User.all
     render :index
   end
 

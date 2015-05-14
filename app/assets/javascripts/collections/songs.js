@@ -3,8 +3,15 @@ EclecticEar.Collections.Songs = Backbone.Collection.extend ({
 
   model: EclecticEar.Models.Song,
 
-  comparator: function(song) {
-    return song.get('created_at');
+  comparator: function(songOne, songTwo) {
+
+    if (songOne.get('created_at') > songTwo.get('created_at')) {
+      return -1;
+    } else if (songOne.get('created_at') < songTwo.get('created_at')) {
+      return 1;
+    } else {
+      return 0;
+    }
   },
 
   getOrFetch: function(id) {

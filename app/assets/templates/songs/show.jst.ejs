@@ -5,5 +5,5 @@
 <p><%= song.get('owner').username %></p>
 <p><%= song.escape('title') %> </p>
 <div class="music-player">
-  streaming
+  <%= song.escape('created_at') %>
 </div>

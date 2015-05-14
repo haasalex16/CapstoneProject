@@ -16,7 +16,9 @@ class Api::SongsController < ApplicationController
   end
 
   def index
-    @songs = current_user.songs
+    ids = current_user.followees.map{|user| user.id}
+    ids << current_user.id
+    @songs = Song.where('user_id IN (?)', ids)
     render :index
   end
 
