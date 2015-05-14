@@ -141,3 +141,7 @@ nav {
 .follow:hover {
   background: orange;
 }
+
+.user-show-header {
+  margin: auto;
+}
