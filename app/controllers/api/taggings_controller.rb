@@ -14,7 +14,7 @@ class Api::TaggingsController < ApplicationController
   end
 
   def index
-    @taggings = Tagging.all
+    @taggings = Tagging.where('song_id = ?', params[:song_id])
     render json: @taggings
   end
 

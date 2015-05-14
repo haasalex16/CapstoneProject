@@ -11,7 +11,6 @@ class Api::FollowsController < ApplicationController
 
   def destroy
     @follow = Follow.find(params[:id])
-    # @follow = Follow.find_by(follower_id: 3, followee_id: 2)
     @follow.destroy!
     render json: @follow
   end
