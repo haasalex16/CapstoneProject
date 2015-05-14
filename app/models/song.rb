@@ -4,5 +4,7 @@ class Song < ActiveRecord::Base
   validates :upload_id, presence: true
 
   belongs_to :user
+  has_many :taggings
+  has_many :tags, through: :taggings, source: :tag
 
 end
