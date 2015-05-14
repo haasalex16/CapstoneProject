@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :songs
-    resources :users, only: [:index, :show, :edit, :destroy] do
-      resources :follows, only: [:create, :destroy]
-    end
+    resources :users, only: [:index, :show, :edit, :destroy]
+    resources :follows, only: [:create, :destroy, :index]
+
   end
 end

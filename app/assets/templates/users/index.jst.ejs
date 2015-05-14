@@ -7,7 +7,7 @@
      <li class='user-thumb'>
      <%= user.escape('username') %>
      <% if (user.get("follow") === true)  { %>
-      <button class='follow'
+      <button class='unfollow'
               data-id="<%=user.get('id') %>">
               Unfollow
       </button>

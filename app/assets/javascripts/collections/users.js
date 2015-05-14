@@ -22,7 +22,8 @@ EclecticEar.Collections.Users = Backbone.Collection.extend ({
     }
 
     return user;
-  }
+  },
+
 });
 
 EclecticEar.Collections.users = new EclecticEar.Collections.Users();

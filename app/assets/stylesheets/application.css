@@ -134,11 +134,11 @@ nav {
   margin: 10px;
 }
 
-.follow {
+.follow, .unfollow {
   padding: 5px;
   border: 1px black solid;
 }
-.follow:hover {
+.follow:hover, .unfollow:hover {
   background: orange;
 }
 

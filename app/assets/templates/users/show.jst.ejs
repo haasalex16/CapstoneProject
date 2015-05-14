@@ -7,7 +7,7 @@
   <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
 
   <% } else if (user.get("follow") === true)  { %>
-   <button class='follow'
+   <button class='unfollow'
            data-id="<%=user.get('id') %>">
            Unfollow
    </button>
