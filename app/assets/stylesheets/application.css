@@ -26,6 +26,7 @@ header, ul, li, p, button {
   font: inherit;
   text-align: inherit;
   text-decoration: inherit;
+  color: inherit;
 }
 
 ul {
@@ -41,7 +42,7 @@ ul {
 }
 
 header {
-  background: #3E94F7;
+  background: #FF5500;
 }
 
 nav {
@@ -60,7 +61,7 @@ nav {
 }
 
 .sign-in {
-  background: #3E94F7;
+  background: #FF5500;
   width: 200px;
   margin: 20px auto;
   border-radius: 5px;
