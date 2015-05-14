@@ -99,7 +99,7 @@ nav {
   margin: 10px;
 }
 
-.song-show > p {
+.song-show > p, .song-show > a {
   float: left;
   width: 428px;
   border: 1px solid #eee;
@@ -134,10 +134,10 @@ nav {
   margin: 10px;
 }
 
-.user-thumb button {
+.follow {
   padding: 5px;
   border: 1px black solid;
 }
-.user-thumb button:hover {
+.follow:hover {
   background: orange;
 }

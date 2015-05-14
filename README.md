@@ -12,7 +12,7 @@ utilizing Amazon S3 to store files. Users can:
 - [x] Create sessions (log in)
 - [x] Create Music Information
 - [ ] Follow Other Users
-- [ ] Uploaded Music and Followed User's Music Adds to User Feed
+- [x] Uploaded Music and Followed User's Music Adds to User Feed
 - [ ] Tag Music
 - [ ] Create Playlists
 - [ ] Search for Songs and Playlist by Title
