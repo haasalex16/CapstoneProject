@@ -7,6 +7,10 @@ EclecticEar.Views.TagForm = Backbone.CompositeView.extend ({
     'click button': 'submit'
   },
 
+  initialize: function(options) {
+    this.song = options.song;
+  },
+
   render: function() {
     var view = this.template();
     this.$el.html(view);
@@ -19,10 +23,10 @@ EclecticEar.Views.TagForm = Backbone.CompositeView.extend ({
     var attrs = this.$el.serializeJSON();
     var model = new EclecticEar.Models.Tag();
     model.set(attrs);
-    model.save({song_id: 3},{
+    model.save({song_id: this.song.get('id')},{
       success: function() {
-        alert("saved");
-      }
+        this.render();
+      }.bind(this)
     })
 
   }

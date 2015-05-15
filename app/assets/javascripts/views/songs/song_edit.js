@@ -6,23 +6,25 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
+    this.addTagForm();
     this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function() {
-    EclecticEar.Collections.tags.fetch();
-    var view = this.template({tags: EclecticEar.Collections.tags, song: this.model});
+    var view = this.template({song: this.model});
     this.$el.html(view);
+    this.attachSubviews();
     return this;
   },
 
   removeTag: function(event) {
     var id = parseInt($(event.currentTarget).attr('data-id'));
     var tagging = this.model.taggings().get(id);
-    tagging.destroy({
-      success: function() {
-        this.model.fetch();
-      }
-    });
+    tagging.destroy();
+  },
+
+  addTagForm: function(){
+    var view = new EclecticEar.Views.TagForm({song: this.model});
+    this.addSubview(".add-tag", view);
   }
 });

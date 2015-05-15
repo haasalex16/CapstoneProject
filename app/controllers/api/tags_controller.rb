@@ -4,14 +4,9 @@ class Api::TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(tag_params)
-    if @tag.save
-      render json: @tag
-      Tagging.create(song_id: params[:song_id], tag_id: @tag.id)
-    else
-      flash[:errors] = @tag.errors.full_messages
-      render json: @tag.errors, status: 422
-    end
+    @tag = Tag.find_or_create_by(tag_params)
+    Tagging.create(song_id: params[:song_id], tag_id: @tag.id)
+    render json: @tag
   end
 
   def index

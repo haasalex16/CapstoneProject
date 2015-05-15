@@ -11,15 +11,7 @@
   <%  }) %>
   <br>
 
-  <label>Add Tag</label><br>
-  <select name="tagging">
-    <% tags.each(function(tag){ %>
-    <option value="<%= tag.get('title') %>">
-      <%= tag.get('title').capitalize %>
-    </option>
-
-    <%  }) %>
-  </select><br>
+  <fieldset class="add-tag"></fieldset>
   <button>Submit</button>
 
 </form>
