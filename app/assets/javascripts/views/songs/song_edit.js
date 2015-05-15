@@ -18,5 +18,6 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
 
   removeTag: function(event) {
     alert("remove!");
+
   }
 });

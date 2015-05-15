@@ -7,6 +7,7 @@ class Api::TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     if @tag.save
       render json: @tag
+      Tagging.create(song_id: params[:song_id], tag_id: @tag.id)
     else
       flash[:errors] = @tag.errors.full_messages
       render json: @tag.errors, status: 422
