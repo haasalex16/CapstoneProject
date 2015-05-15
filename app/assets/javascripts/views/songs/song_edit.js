@@ -17,7 +17,12 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   },
 
   removeTag: function(event) {
-    alert("remove!");
-
+    var id = parseInt($(event.currentTarget).attr('data-id'));
+    var tagging = this.model.taggings().get(id);
+    tagging.destroy({
+      success: function() {
+        this.model.fetch();
+      }
+    });
   }
 });

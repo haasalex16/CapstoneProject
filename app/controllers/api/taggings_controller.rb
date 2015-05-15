@@ -18,6 +18,13 @@ class Api::TaggingsController < ApplicationController
     render json: @taggings
   end
 
+  def destroy
+    @tagging = Tagging.find(params[:id]);
+    @tagging.destroy
+    render json: @tagging
+  end
+
+
   private
 
     def tagging_params
