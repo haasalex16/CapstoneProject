@@ -4,12 +4,17 @@
 </div>
 <div class="play-button">
   <div class="arrow">
-
-  </div>
+</div>
 
 </div>
 <a href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
-<p><%= song.escape('title') %> </p>
+<% if(currentUser.get('id') === song.get('owner').id){ %>
+  <a href="#/songs/<%= song.get('id') %>/edit">
+    <%= song.escape('title') %>
+  </a>
+<%  } else { %>
+  <p><%= song.escape('title') %> </p>
+<%  }%>
 <div class="music-player">
   <%= song.escape('created_at') %>
 </div>

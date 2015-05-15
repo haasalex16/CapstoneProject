@@ -13,11 +13,12 @@
 
   <label>Add Tag</label><br>
   <select name="tagging">
-    <option></option>
-    <option value="alternative">Alternative</option>
-    <option value="rock">Rock</option>
-    <option value="rap">Rap</option>
-    <option value="new">Add New</option>
+    <% tags.each(function(tag){ %>
+    <option value="<%= tag.get('title') %>">
+      <%= tag.get('title').capitalize %>
+    </option>
+
+    <%  }) %>
   </select><br>
   <button>Submit</button>
 

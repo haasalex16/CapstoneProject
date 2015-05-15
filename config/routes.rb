@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :new, :destroy]
 
   namespace :api, defaults: {format: :json} do
-    resources :songs do
-      resources :taggings, only: [:create, :destroy, :index]
-    end
+    resources :songs
+    resources :taggings, only: [:create, :destroy, :index]
     resources :users, only: [:index, :show, :edit, :destroy]
     resources :follows, only: [:create, :destroy, :index]
     resources :tags, only: [:create, :destroy, :index]

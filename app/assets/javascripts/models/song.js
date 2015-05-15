@@ -12,6 +12,7 @@ EclecticEar.Models.Song = Backbone.Model.extend ({
   taggings: function() {
     if (!this._taggings) {
       this._taggings = new EclecticEar.Collections.Taggings();
+      {song_id: this.get('id')}
     }
     return this._taggings;
   }

@@ -3,6 +3,7 @@ json.username @user.username
 json.email @user.email
 json.followers @user.followers.count
 json.songs @user.songs do | song |
+  json.id song.id
   json.title song.title
   json.owner User.find(song.user_id)
   json.upload_id song.upload_id
