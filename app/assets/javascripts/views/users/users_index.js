@@ -6,6 +6,8 @@ EclecticEar.Views.UsersIndex = Backbone.CompositeView.extend ({
     'click .unfollow': 'unfollow'
   },
 
+  className: 'group',
+
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
   },

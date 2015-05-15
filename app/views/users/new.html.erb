@@ -1,16 +1,20 @@
-<h1>Sign Up!</h1>
 
-<form class='sign-in' action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<section class='sign-in-up' >
+  <h1>Join EclecticEar</h1>
 
-  <label>Email:</label>
-  <input type="text" name="user[email]" value="<%= @user.email %>">
+  <form action="<%= users_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label>Username:</label>
-  <input type="text" name="user[username]" value="<%= @user.username %>">
+    <label>Email:</label>
+    <input type="text" name="user[email]" value="<%= @user.email %>">
 
-  <label>Password:</label>
-  <input type="password" name="user[password]">
+    <label>Username:</label>
+    <input type="text" name="user[username]" value="<%= @user.username %>">
 
-  <input type="submit" value="Sign Up!">
-</form>
+    <label>Password:</label>
+    <input type="password" name="user[password]">
+
+    <input type="submit" value="Sign Up!">
+  </form>
+
+</section>

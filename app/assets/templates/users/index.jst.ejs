@@ -5,7 +5,9 @@
        <% return; %>
       <% } %>
      <li class='user-thumb'>
-     <%= user.escape('username') %>
+       <a href="#/users/<%=user.get('id')%>">
+         <%= user.escape('username') %>
+       </a>
      <% if (user.get("follow") === true)  { %>
       <button class='unfollow'
               data-id="<%=user.get('id') %>">

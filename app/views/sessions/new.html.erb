@@ -1,13 +1,17 @@
-<h1>Log In!</h1>
 
-<form class='sign-in' action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<section class='sign-in-up'>
+  <h1>Sign In</h1>
 
-  <label>Username:</label>
-  <input type="text" name="user[username]">
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label>Password:</label>
-  <input type="password" name="user[password]">
+    <label>Username:</label>
+    <input type="text" name="user[username]">
 
-  <input type="submit" value="Log In!">
-</form>
+    <label>Password:</label>
+    <input type="password" name="user[password]">
+
+    <input type="submit" value="Log In!">
+  </form>
+
+</section>

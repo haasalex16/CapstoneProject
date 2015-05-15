@@ -1,6 +1,7 @@
 json.id @user.id
 json.username @user.username
 json.email @user.email
+json.followers @user.followers.count
 json.songs @user.songs do | song |
   json.title song.title
   json.owner User.find(song.user_id)

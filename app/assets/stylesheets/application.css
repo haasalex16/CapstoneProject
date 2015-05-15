@@ -15,7 +15,8 @@
  */
 
 html, h1, h2, nav, a, body,
-header, ul, li, p, button {
+header, ul, li, p, button, main,
+form {
   margin: 0;
   padding: 0;
   border: 0;
@@ -41,35 +42,109 @@ ul {
   clear: both;
 }
 
+/*page*/
+
+body {
+  background: #F2F2F2;
+  font-family: sans-serif;
+}
+
+
+/*header*/
+
 header {
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  color: #949494;
+  /*color: #C3C3C3;*/
+  background: #333333;
+  font-weight: bold;
+}
+
+.header {
+  width: 900px;
+  margin: auto;
+}
+
+.header a:hover,
+.header form:hover {
+  color: #ffffff;
+}
+
+.header-logo {
+  color: #ffffff;
   background: #FF5500;
-}
-
-nav {
-  float: right
-}
-
-.logo {
   padding: 10px;
   float: left;
   font-weight: 700;
   font-size: 26px
 }
-.nav-links {
+
+.header-list {
+  float: right;
+}
+.header-list > li {
   float: left;
-  padding: 5px
+  padding: 15px 20px;
 }
 
-.sign-in {
+.header form:hover {
+  cursor: pointer;   /* why dont you work? */
+}
+
+.header-sign-up {
+  background: #FF5500;
+  color: #FFFFFF;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header-sign-in {
+  color: #FFFFFF;
+  padding: 5px;
+  border: 1px solid #949494;
+  border-radius: 5px;
+}
+
+.header-sign-in:hover {
+  border: 1px solid #999999
+}
+
+/*body*/
+
+.content {
+  padding-top: 30px;
+  top: 50px;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  background: #FFFFFF;
+  bottom: 0px;
+}
+
+
+.sign-in-up {
+  color: #FFFFFF;
+  text-align: center;
   background: #FF5500;
   width: 200px;
   margin: 20px auto;
   border-radius: 5px;
 }
 
-.sign-in label, .sign-in input {
+
+.sign-in-up label,
+.sign-in-up input {
   margin: 10px;
 }
+
+.sign-in-up > h1 {
+  font-size: 24px;
+  padding: 5px 0 10px 0;
+}
+
+/*feed*/
 
 .feed {
   width: 650px;
@@ -91,6 +166,28 @@ nav {
 
 }
 
+.play-button {
+  float: left;
+  background: #FF5500;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 10px 5px 0 5px;
+}
+
+.arrow {
+  position: relative;
+  top: 15px;
+  left: 20px;
+  width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+
+	border-left:15px solid black;
+
+}
+
 .album-art {
   float: left;
   background: #bbb;
@@ -101,9 +198,11 @@ nav {
 
 .song-show > p, .song-show > a {
   float: left;
-  width: 428px;
+  width: 368px;
+  height: 18px;
   border: 1px solid #eee;
   margin: 10px 10px 0 10px;
+  overflow: hidden;
 }
 
 .music-player {
@@ -126,20 +225,50 @@ nav {
   border: solid black 1px;
 }
 
+ /*users*/
+
+ .user-thumb a {
+   background: black;
+   color: white;
+   display: inline;
+   padding: 5px;
+ }
+
 .user-thumb {
   float: left;
   background: #bbb;
-  width: 130px;
-  height: 130px;
+  width: 190px;
+  height: 190px;
   margin: 10px;
+  position: relative;
+}
+
+.user-thumb:hover .follow,
+.user-thumb:hover .unfollow {
+  display: block;
 }
 
 .follow, .unfollow {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   padding: 5px;
-  border: 1px black solid;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
 }
-.follow:hover, .unfollow:hover {
-  background: orange;
+
+.follow {
+  background: #FF5500;
+  color: white;
+}
+
+.unfollow {
+  color: #FF5500;
+  background: white;
+  border: 1px solid #FF5500;
 }
 
 .user-show-header {

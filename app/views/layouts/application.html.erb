@@ -8,38 +8,48 @@
 </head>
 <body>
 
-<header class="group">
-  <h1 class="logo"><a href="#/">EclecticEar</a></h1>
-  <nav>
+<header>
+  <nav class="header group">
+    <a class="header-logo" href="#/">EclecticEar</a>
+    <ul class="header-list group">
+      <li><a href="#/upload">Upload</a></li>
 
-    <a class="nav-links" href="#/upload">Upload</a>
-    <a class="nav-links" href="#/users">Users</a>
-    <% if logged_in? %>
-      <a href="#/users/<%= current_user.id%>" class="nav-links"><%= current_user.username %>
-      </a>
+      <% if logged_in? %>
+      <li><a href="#/users">Users</a></li>
+      <li>
+        <a href="#/users/<%= current_user.id%>" class="nav-links">
+          <%= current_user.username %>
+        </a>
+      </li>
 
-      <form class="nav-links"
-            action="<%=session_url%>"
-            method="post">
-        <input type="hidden" name="_method" value="DELETE">
-        <input  type="hidden"
-                name="authenticity_token"
-                value="<%= form_authenticity_token %>">
-        <button>Log Out</button>
-      </form>
-    <% else %>
-      <a class="nav-links" href="<%=new_session_url%>">Sign In</a>
-      <p class="nav-links">
-        or
-      </p>
-      <a class="nav-links" href=" <%= new_user_url %> ">Sign Up</a>
-    <% end %>
+      <li>
+        <form action="<%=session_url%>"
+              method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <input  type="hidden"
+                  name="authenticity_token"
+                  value="<%= form_authenticity_token %>">
+          <button>Log Out</button>
+        </form>
+      </li>
+
+      <% else %>
+      <li>
+        <a class="header-sign-in" href="<%=new_session_url%>">Sign In</a>
+      </li>
+      <li>or</li>
+      <li>
+        <a class="header-sign-up" href=" <%= new_user_url %> ">Sign Up</a>
+      </li>
+      <% end %>
+    </ul>
   </nav>
 </header>
 
-<%= render "shared/errors" %>
-
-<%= yield %>
+<main class="content">
+  <%= render "shared/errors" %>
+  <%= yield %>
+</main>
 
 </body>
 </html>
