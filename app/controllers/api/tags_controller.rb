@@ -5,7 +5,7 @@ class Api::TagsController < ApplicationController
 
   def create
     @tag = Tag.find_or_create_by(tag_params)
-    Tagging.create(song_id: params[:song_id], tag_id: @tag.id)
+    # Tagging.create(song_id: params[:song_id], tag_id: @tag.id)
     render json: @tag
   end
 

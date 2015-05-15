@@ -23,8 +23,14 @@ EclecticEar.Views.TagForm = Backbone.CompositeView.extend ({
     var attrs = this.$el.serializeJSON();
     var model = new EclecticEar.Models.Tag();
     model.set(attrs);
-    model.save({song_id: this.song.get('id')},{
-      success: function() {
+    model.save({},{
+      success: function(tag) {
+        var tagging = new EclecticEar.Models.Tagging({tag_id: tag.get('id'), song_id: this.song.get('id')});
+        tagging.save({},{
+          success: function(tagging){
+            this.song.taggings().add(tagging);
+          }.bind(this)
+        });
         this.render();
       }.bind(this)
     })
