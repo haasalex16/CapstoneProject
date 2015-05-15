@@ -68,8 +68,9 @@ header {
 }
 
 .header a:hover,
-.header form:hover {
+.header button:hover {
   color: #ffffff;
+  cursor: pointer;
 }
 
 .header-logo {
@@ -87,10 +88,6 @@ header {
 .header-list > li {
   float: left;
   padding: 15px 20px;
-}
-
-.header form:hover {
-  cursor: pointer;   /* why dont you work? */
 }
 
 .header-sign-up {
@@ -121,6 +118,7 @@ header {
   margin: auto;
   background: #FFFFFF;
   bottom: 0px;
+  height: 100%;
 }
 
 
@@ -273,4 +271,28 @@ header {
 
 .user-show-header {
   margin: auto;
+}
+
+/*tag*/
+
+.remove-tag {
+  background: #FF5500;
+  display: inline;
+  padding: 3px 3px;
+  font-size: 8px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.remove-tag:hover {
+  cursor: pointer;
+}
+
+.tag {
+  background: black;
+  display: inline;
+  padding: 3px 4px;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
 }

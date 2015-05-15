@@ -1,1 +1,24 @@
-<h2> <%= song.escape('title') %> </h2>
+<form class="sign-in-up">
+  <label>Song Name</label>
+  <input type="text" name="title" value="<%= song.escape('title') %>"><br>
+  <% song.taggings().each(function(tagging){ %>
+    <div class="tag">
+      <div class="remove-tag" data-id="<%=tagging.id %>">
+        X
+      </div>
+      <%= tagging.get('tag') %>
+    </div>
+  <%  }) %>
+  <br>
+
+  <label>Add Tag</label><br>
+  <select name="tagging">
+    <option></option>
+    <option value="alternative">Alternative</option>
+    <option value="rock">Rock</option>
+    <option value="rap">Rap</option>
+    <option value="new">Add New</option>
+  </select><br>
+  <button>Submit</button>
+
+</form>
