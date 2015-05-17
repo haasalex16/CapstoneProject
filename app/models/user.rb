@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
     through: :out_follows,
     source: :followee, dependent: :destroy
 
+  has_many :playlists, dependent: :destroy
+
 
   def self.find_by_credentials (username, password)
     user = User.find_by(username: username)

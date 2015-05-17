@@ -42,8 +42,8 @@ tag_id      | integer   | not null, foreign key (references tags)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
 title       | string    | not null
+user_id     | integer   | not null, foreign key (references users)
 
 ## playlist_songs
 column name | data type | details
