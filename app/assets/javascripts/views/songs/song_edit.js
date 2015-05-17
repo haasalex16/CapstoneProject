@@ -2,13 +2,16 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   template: JST['songs/edit'],
 
   events: {
-    'click .remove-tag' :'removeTag'
+    'click .remove-tag' :'removeTag',
+    'click .edit-song': 'submit',
   },
+
+  className: 'edit-view group',
 
   initialize: function() {
     this.addTagForm();
-    this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.taggings(), 'sync', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
+    this.listenTo(this.model.taggings(), 'add remove sync', this.render);
   },
 
   render: function() {
@@ -16,6 +19,13 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
     this.$el.html(view);
     this.attachSubviews();
     return this;
+  },
+
+  submit: function(event) {
+    event.preventDefault();
+    var attrs = this.$('.edit-form').serializeJSON();
+    this.model.set(attrs);
+    this.model.save();
   },
 
   removeTag: function(event) {

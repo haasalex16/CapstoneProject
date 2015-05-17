@@ -3,4 +3,8 @@ class Tag < ActiveRecord::Base
 
   has_many :taggings
   has_many :songs, through: :taggings, source: :song
+
+  def amount
+    taggings.count
+  end
 end

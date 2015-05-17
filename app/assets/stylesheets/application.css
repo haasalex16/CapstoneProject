@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, h1, h2, nav, a, body,
+html, h1, h2, nav, a, body, fieldset,
 header, ul, li, p, button, main,
 form {
   margin: 0;
@@ -44,9 +44,10 @@ ul {
 
 /*page*/
 
-body {
+body, html {
   background: #F2F2F2;
   font-family: sans-serif;
+  padding: 1px;
 }
 
 
@@ -117,7 +118,6 @@ header {
   width: 900px;
   margin: auto;
   background: #FFFFFF;
-  bottom: 0px;
   height: 100%;
 }
 
@@ -194,15 +194,17 @@ header {
   margin: 10px;
 }
 
-.song-show > p, .song-show > a {
+.song-show > .title,
+.song-show > a {
   float: left;
-  width: 368px;
   height: 18px;
   border: 1px solid #eee;
   margin: 10px 10px 0 10px;
   overflow: hidden;
 }
-
+.song-show > .title {
+  width: 368px;
+}
 .music-player {
   float: left;
   height: 70px;
@@ -278,6 +280,7 @@ header {
 .remove-tag {
   background: #FF5500;
   display: inline;
+  position: relative;
   padding: 3px 3px;
   font-size: 8px;
   text-align: center;
@@ -288,11 +291,65 @@ header {
   cursor: pointer;
 }
 
+.tags {
+  outline: 1px #CCCCCC solid;
+  margin: 10px 0;
+  width: 270px;
+}
+
 .tag {
+  color: white;
   background: black;
-  display: inline;
   padding: 3px 4px;
   font-size: 14px;
-  margin: 5px;
   border-radius: 5px;
+  float: left;
+  margin: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*song edit*/
+
+.edit-view {
+  width: 600px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.edit-view label,
+.edit-view input {
+  display: block;
+  margin: 10px 0;
+}
+
+.edit-form > input {
+  width:270px;
+}
+
+.album-art-large {
+  float: left;
+  width: 300px;
+  height: 300px;
+  background: #eee;
+  margin-right: 10px;
+}
+
+.edit-form {
+  float: left;
+}
+.add-tag {
+  display: block;
+  float: left;
+  width: 50px;
+  margin: 0;
+  /*overflow: hidden;*/
+}
+
+.add-tag input {
+  border: none;
+  height: 20px;
+  margin: 0;
 }

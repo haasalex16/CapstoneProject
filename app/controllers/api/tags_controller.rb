@@ -11,7 +11,7 @@ class Api::TagsController < ApplicationController
 
   def index
     @tags = Tag.all
-    render json: @tags
+    render :index
   end
 
   private

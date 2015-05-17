@@ -10,4 +10,5 @@ json.upload_id @song.upload_id
 json.taggings @song.taggings do |tagging|
   json.id tagging.id
   json.tag Tag.find(tagging.tag_id).title
+  json.count Tag.find(tagging.tag_id).amount
 end

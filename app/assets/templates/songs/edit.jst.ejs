@@ -1,17 +1,31 @@
-<form class="sign-in-up">
-  <label>Song Name</label>
-  <input type="text" name="title" value="<%= song.escape('title') %>"><br>
-  <% song.taggings().each(function(tagging){ %>
-    <div class="tag">
-      <div class="remove-tag" data-id="<%=tagging.id %>">
-        X
-      </div>
-      <%= tagging.get('tag') %>
-    </div>
-  <%  }) %>
-  <br>
+<p><%= EclecticEar.currentUser.get('username') %></p>
 
-  <fieldset class="add-tag"></fieldset>
-  <button>Submit</button>
+<%= song.escape('title') %>
+
+<div class="album-art-large">
+
+</div>
+
+<form class='edit-form'>
+  <label>Title *</label>
+  <input type="text" name="title" value="<%= song.escape('title') %>">
+  <p>
+    Tags
+  </p>
+  <section class="tags group">
+    <% song.taggings().each(function(tagging){ %>
+      <div class="tag">
+        <div class="remove-tag" data-id="<%=tagging.id %>">
+          X
+        </div>
+        <%= tagging.get('tag') %>
+      </div>
+    <%  }) %>
+    <div class="add-tag"></fieldset>
+
+  </section>
+
+
+  <button class=edit-song>Save Changes</button>
 
 </form>
