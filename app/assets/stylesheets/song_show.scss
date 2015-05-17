@@ -1,0 +1,63 @@
+.song-show {
+  float: left;
+  width: 600px;
+  height: 150px;
+  margin: 20px;
+  border: 2px solid black;
+
+}
+
+.play-button {
+  float: left;
+  background: #FF5500;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 10px 5px 0 5px;
+}
+
+.arrow {
+  position: relative;
+  top: 15px;
+  left: 20px;
+  width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+
+	border-left:15px solid black;
+
+}
+
+.album-art {
+  float: left;
+  background: #bbb;
+  width: 130px;
+  height: 130px;
+  margin: 10px;
+}
+
+.song-show > .title,
+.song-show > a,
+.time-ago {
+  float: left;
+  height: 18px;
+  border: 1px solid #eee;
+  margin: 10px 10px 0 10px;
+  overflow: hidden;
+}
+
+.time-ago {
+  float: right;
+}
+.song-show > .title {
+  width: 368px;
+}
+.music-player {
+  float: left;
+  height: 70px;
+  margin: 10px;
+  background: #eee;
+  color: orange;
+  width: 430px;
+}

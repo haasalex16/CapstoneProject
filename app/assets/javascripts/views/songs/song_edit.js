@@ -11,10 +11,11 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   initialize: function() {
     this.addTagForm();
     this.listenTo(this.model, 'sync change', this.render);
-    this.listenTo(this.model.taggings(), 'add remove sync', this.render);
+    this.listenTo(this.model.taggings(), 'add remove', this.render);
   },
 
   render: function() {
+    // this.model.taggings().fetch();
     var view = this.template({song: this.model});
     this.$el.html(view);
     this.attachSubviews();

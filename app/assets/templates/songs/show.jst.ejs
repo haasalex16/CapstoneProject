@@ -9,6 +9,12 @@
 
 <a href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
 
+<div class="time-ago">
+  <p>
+    <%= song.timeSince(Date.parse(song.get('created_at'))) %>
+  </p>
+</div>
+
 <% if(currentUser.get('id') === song.get('owner').id){ %>
   <a class='title' href="#/songs/<%= song.get('id') %>/edit">
     <%= song.escape('title') %>
