@@ -14,11 +14,8 @@
   </p>
   <section class="tags group">
     <% song.taggings().each(function(tagging){ %>
-      <div class="tag">
-        <div class="remove-tag" data-id="<%=tagging.id %>">
-          X
-        </div>
-        <%= tagging.get('tag') %>
+      <div class="remove-tag" data-id="<%= tagging.get('id') %>">
+        #<%= tagging.get('tag') %>
       </div>
     <%  }) %>
     <div class="add-tag"></fieldset>

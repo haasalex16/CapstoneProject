@@ -15,7 +15,7 @@
  */
 
 html, h1, h2, nav, a, body, fieldset,
-header, ul, li, p, button, main,
+header, ul, li, p, input, button, main,
 form {
   margin: 0;
   padding: 0;
@@ -167,6 +167,10 @@ header {
   border: solid black 1px;
 }
 
+.uploader input {
+  border: 1px solid black;
+}
+
  /*users*/
 
  .user-thumb a {
@@ -219,32 +223,30 @@ header {
 
 /*tag*/
 
-.remove-tag {
-  background: #FF5500;
-  display: inline;
-  position: relative;
-  padding: 3px 3px;
-  font-size: 8px;
-  text-align: center;
-  border-radius: 50%;
-}
-
-.remove-tag:hover {
-  cursor: pointer;
-}
-
 .tags {
   outline: 1px #CCCCCC solid;
   margin: 10px 0;
   width: 270px;
 }
 
-.tag {
+.remove-tag {
+  padding: 3px 4px;
+  font-size: 14px;
+  float: left;
+  margin: 1px;
+}
+
+.remove-tag:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+.show-tag {
   color: white;
   background: black;
   padding: 3px 4px;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 10px;
   float: left;
   margin: 1px;
 }
@@ -285,7 +287,7 @@ header {
 .add-tag {
   display: block;
   float: left;
-  width: 50px;
+  width: 10px;
   margin: 0;
   /*overflow: hidden;*/
 }
@@ -294,4 +296,5 @@ header {
   border: none;
   height: 20px;
   margin: 0;
+  // width: 100%;
 }
