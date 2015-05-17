@@ -1,7 +1,7 @@
 .song-show {
   float: left;
   width: 600px;
-  height: 150px;
+  height: 170px;
   margin: 20px;
   border: 2px solid black;
 
@@ -34,7 +34,7 @@
   background: #bbb;
   width: 130px;
   height: 130px;
-  margin: 10px;
+  margin: 10px 10px 30px 10px;
 }
 
 .song-show > .title,
@@ -45,6 +45,20 @@
   border: 1px solid #eee;
   margin: 10px 10px 0 10px;
   overflow: hidden;
+}
+
+.add-to-playlist {
+  float: left;
+  border: 1px solid #eee;
+  margin-left: 10px;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.add-to-playlist:hover {
+  cursor: pointer;
+  background: #eee;
 }
 
 .time-ago {

@@ -8,10 +8,10 @@ class Api::PlaylistsController < ApplicationController
   def create
     @playlist = current_user.playlists.new(playlist_params)
     if @playlist.save
-      render json: @song
+      render json: @playlist
     else
-      flash[:errors] = @song.errors.full_messages
-      render json: @song.errors, status: 422
+      flash[:errors] = @playlist.errors.full_messages
+      render json: @playlist.errors, status: 422
     end
   end
 
