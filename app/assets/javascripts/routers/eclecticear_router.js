@@ -6,7 +6,7 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     "users": 'usersIndex',
     "users/:id": 'usersShow',
     "songs/:id/edit": 'editSong',
-    'addtag': 'addTag'
+    "playlists/new": 'playlistForm'
   },
 
   initialize: function(options) {
@@ -20,11 +20,6 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
         this._swapView(view);
       }.bind(this)
     });
-  },
-
-  addTag: function(){
-    var view = new EclecticEar.Views.TagForm();
-    this._swapView(view);
   },
 
   songForm: function(){
@@ -45,6 +40,12 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     EclecticEar.Collections.users.fetch();
 
     var view = new EclecticEar.Views.UsersIndex({collection: EclecticEar.Collections.users});
+
+    this._swapView(view);
+  },
+
+  playlistForm: function() {
+    var view = new EclecticEar.Views.PlaylistForm();
 
     this._swapView(view);
   },

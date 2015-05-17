@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :destroy]
     resources :follows, only: [:create, :destroy, :index]
     resources :tags, only: [:create, :destroy, :index]
-    resources :playlists, only: [:create, :show, :edit, :destroy]
+    resources :playlists, only: [:create, :show, :edit, :index, :destroy]
 
   end
 end

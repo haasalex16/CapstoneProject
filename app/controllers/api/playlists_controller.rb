@@ -1,4 +1,4 @@
-class PlaylistsController < ApplicationController
+class Api::PlaylistsController < ApplicationController
 
   def new
     @playlist = Playlist.new
@@ -13,6 +13,11 @@ class PlaylistsController < ApplicationController
       flash[:errors] = @song.errors.full_messages
       render json: @song.errors, status: 422
     end
+  end
+
+  def index
+    @playlists = current_user.playlists
+    render json: @playlists
   end
 
   private
