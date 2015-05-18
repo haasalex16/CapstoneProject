@@ -5,7 +5,10 @@ json.followers @user.followers.count
 json.songs @user.songs do | song |
   json.id song.id
   json.title song.title
-  json.owner User.find(song.user_id)
+  json.owner do
+    json.id song.user_id
+    json.username User.find(song.user_id).username
+  end
   json.upload_id song.upload_id
   json.created_at song.created_at
   json.taggings song.taggings do |tagging|

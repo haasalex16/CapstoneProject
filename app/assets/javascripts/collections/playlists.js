@@ -17,7 +17,7 @@ EclecticEar.Collections.Playlists = Backbone.Collection.extend({
     }
 
     return playlist;
-  }
+  },
 
 });
 

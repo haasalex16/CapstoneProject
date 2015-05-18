@@ -3,7 +3,7 @@ EclecticEar.Models.User = Backbone.Model.extend({
 
   parse: function(response) {
     if (response.songs) {
-      this.songs().set(response.songs);
+      this.songs().set(response.songs, {parse: true});
       delete response.songs;
     }
     return response;

@@ -1,1 +1,29 @@
-<h2><%= playlist.escape('title') %></h2>
+
+<header class="playlist-show-header">
+  <div class="play-button">
+    <div class="arrow"></div>
+  </div>
+  <h2 class="playlist-name"><%= playlist.escape('title') %></h2>
+
+  <div class="track-count">
+    <%= playlist.songs().length %>
+    <br>TRACKS
+  </div>
+
+  <section class='album-art-large'>
+
+  </section>
+
+  <p class="time-ago">
+    <%= playlist.timeSince(Date.parse(playlist.get('created_at'))) %>
+  </p>
+
+</header>
+
+<ul class='playlist-songs'>
+  <!-- <% playlist.songs().each(function(song){  %>
+    <li>
+    <%= song.escape('title') %>
+    </li>
+  <% }) %> -->
+</ul>

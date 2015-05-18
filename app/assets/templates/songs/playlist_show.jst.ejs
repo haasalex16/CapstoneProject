@@ -1,0 +1,18 @@
+<div class="album-art-thumb">
+  Art
+</div>
+
+<div class="small-play-button">
+  <div class="small-arrow"></div>
+</div>
+
+<a class="playlist-song-owner" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %> - </a>
+
+<% if(currentUser.get('id') === song.get('owner').id){ %>
+  <a class='title' href="#/songs/<%= song.get('id') %>/edit">
+    <%= song.escape('title') %>
+  </a>
+<%  } else { %>
+  <p class='title'><%= song.escape('title') %> </p>
+<%  }%>
+<button class="add-to-playlist">Add to playlist</button>

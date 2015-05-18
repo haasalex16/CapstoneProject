@@ -1,3 +1,93 @@
 // Place all the styles related to the playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.playlist-show {
+  position: relative;
+  width: 900px;
+  margin: auto;
+}
+
+.playlist-show-header {
+  width: 860px;
+  background: white;
+  height: 300px;
+  padding: 20px;
+  position: static;
+}
+
+.playlist-show-header .album-art-large {
+  float: right;
+}
+
+.playlist-name {
+  float: left;
+  background: black;
+  color: white;
+  display: inline;
+  padding: 5px;
+  text-size: 24px;
+}
+
+.track-count {
+  text-align: center;
+  position: absolute;
+  padding: 25px 10px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  display: inline;
+  top: 240px;
+  left: 20px;
+}
+
+.album-art-thumb {
+  height: 50px;
+  width: 50px;
+  background: #ccc;
+  float: left;
+}
+
+.playlist-song-show {
+  float: left;
+  width: 600px;
+  height: 50px;
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.title {
+  float: left;
+  height: 18px;
+  border: 1px solid #eee;
+  margin: 10px 10px 0 10px;
+  overflow: hidden;
+}
+
+.small-play-button {
+  float: left;
+  background: #FF5500;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.small-arrow {
+  position: relative;
+  top: 10px;
+  left: 15px;
+  width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 15px solid black;
+}
+.playlist-song-owner {
+  float: left;
+  height: 18px;
+  border: 1px solid #eee;
+  margin: 10px 0 0 10px;
+  overflow: hidden;
+  color: #bbb;
+}
