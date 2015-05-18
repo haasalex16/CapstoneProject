@@ -20,6 +20,11 @@ class Api::PlaylistsController < ApplicationController
     render json: @playlists
   end
 
+  def show
+    @playlist = Playlist.find(params[:id])
+    render json: @playlist
+  end
+
   private
     def playlist_params
       params.require(:playlist).permit(:title)
