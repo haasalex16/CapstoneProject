@@ -10,7 +10,10 @@ EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
+    this.listenTo(EclecticEar.Collections.userPlaylists, 'sync', this.addPlaylist);
     this.song_id = options.playlist_song.get('song_id');
+    EclecticEar.Collections.userPlaylists.fetch();
+    this.addPlaylist();
   },
 
   render: function() {
@@ -26,7 +29,6 @@ EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
   },
 
   addPlaylist: function() {
-    EclecticEar.Collections.userPlaylists.fetch();
     var view = new EclecticEar.Views.PlaylistIndex({
       song_id: this.song_id,
       collection: EclecticEar.Collections.userPlaylists
