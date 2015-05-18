@@ -1,0 +1,8 @@
+<ul>
+  <% playlists.each(function(playlist) { %>
+    <li>
+    <%= playlist.escape('title') %>
+    <button class="add-to-playlist" data-id="<%= playlist.id %>">Add to playlist</button>
+    </li>
+  <% }) %>
+</ul>

@@ -22,16 +22,13 @@ EclecticEar.Views.PlaylistForm = Backbone.CompositeView.extend ({
     var playlist = new EclecticEar.Models.Playlist();
     playlist.save(attrs, {
       success: function(model, response){
-        alert('saved');
         var playlist_id = model.get('id');
         var playlist_song = new EclecticEar.Models.PlaylistSong({
           song_id: this.song_id,
           playlist_id: playlist_id
         });
-        debugger;
         playlist_song.save({},{
           success: function() {
-            alert("new playlist song");
           }
         })
       }.bind(this),

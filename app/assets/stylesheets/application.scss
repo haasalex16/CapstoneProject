@@ -304,11 +304,19 @@ header {
 .playlist_song_modal {
   position: fixed;
   z-index: 2;
-  background: #ffffff;
-  // opacity: .9;
+  background: #F2F2F2;
+  opacity: .9;
   top: 50px;
   width: 100%;
   height: 100%;
+}
+
+.close-modal {
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 20px;
 }
 
 .sub-nav {
@@ -319,26 +327,51 @@ header {
 .sub-nav-header {
   float: left;
   font-size: 28px;
-  // padding: 5px 0;
   margin: 0 5px;
   border-bottom: 1px solid #FF5500;
 }
 
 .sub-nav-header:hover {
   cursor: pointer;
-  border-bottom: 1px solid black;  
+  border-bottom: 1px solid black;
 }
 
 .playlist-song-form {
   position: relative;
   top: 100px;
   margin: auto;
-  width: 600px;
-  background: green;
+  width: 550px;
+  background: #ffffff;
   opacity: 1;
   height: 400px;
 }
 
 .new-or-old-playlist {
-  background: red;
+  background: white;
+  padding: 25px;
+  height: 100%;
+}
+
+// new playlist
+
+.form-label {
+  display: block;
+  color: #444444;
+  font-size: 16px;
+}
+
+.input {
+  outline: 1px #CCCCCC solid;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+.submit-button {
+  background: #FF5500;
+  color: white;
+  border-radius: 5px;
+  float: right;
+  padding: 5px;
 }
