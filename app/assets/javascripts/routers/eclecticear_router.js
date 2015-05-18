@@ -1,7 +1,7 @@
 EclecticEar.Routers.Router = Backbone.Router.extend({
 
   routes: {
-    "": 'songIndex',
+    "": 'home',
     "upload": 'songForm',
     "users": 'usersIndex',
     "users/:id": 'usersShow',
@@ -13,13 +13,9 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
   },
 
-  songIndex: function() {
-    EclecticEar.Collections.songs.fetch({
-      success: function() {
-        var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
-        this._swapView(view);
-      }.bind(this)
-    });
+  home: function() {
+    var view = new EclecticEar.Views.HomeShow();
+    this._swapView(view);
   },
 
   songForm: function(){
