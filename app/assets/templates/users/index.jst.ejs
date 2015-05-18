@@ -1,24 +1,23 @@
-<h1>USERS</h1>
- <ul>
-   <% users.each(function(user) { %>
-     <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
-       <% return; %>
-      <% } %>
-     <li class='user-thumb'>
-       <a href="#/users/<%=user.get('id')%>">
-         <%= user.escape('username') %>
-       </a>
-     <% if (user.get("follow") === true)  { %>
-      <button class='unfollow'
-              data-id="<%=user.get('id') %>">
-              Unfollow
-      </button>
-    <% } else { %>
-      <button class='follow'
-              data-id="<%=user.get('id') %>">
-              Follow
-      </button>
+<ul>
+ <% users.each(function(user) { %>
+   <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
+     <% return; %>
     <% } %>
-     </li>
-    <% }) %>
- </ul>
+   <li class='user-thumb'>
+     <a href="#/users/<%=user.get('id')%>">
+       <%= user.escape('username') %>
+     </a>
+   <% if (user.get("follow") === true)  { %>
+    <button class='unfollow'
+            data-id="<%=user.get('id') %>">
+            Unfollow
+    </button>
+  <% } else { %>
+    <button class='follow'
+            data-id="<%=user.get('id') %>">
+            Follow
+    </button>
+  <% } %>
+   </li>
+  <% }) %>
+</ul>

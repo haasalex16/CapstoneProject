@@ -28,7 +28,12 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
   },
 
   showPlaylists: function() {
-    alert('playlists');
+    EclecticEar.Collections.userPlaylists.fetch({
+      success: function() {
+        var view = new EclecticEar.Views.PlaylistUserIndex({collection: EclecticEar.Collections.userPlaylists});
+        this._swapView(view);
+      }.bind(this)
+    })
   },
 
   showFollowing: function() {

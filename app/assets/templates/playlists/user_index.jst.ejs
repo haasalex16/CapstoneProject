@@ -1,0 +1,7 @@
+<% playlists.each(function(playlist){ %>
+  <div class="playlist-thumb">
+    <a class="playlist-thumb-title" href="#/playlists/<%= playlist.get('id') %>">
+      <%= playlist.escape('title') %>
+    </a>
+  </div>
+<% }) %>

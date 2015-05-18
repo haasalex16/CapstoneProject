@@ -91,3 +91,36 @@
   overflow: hidden;
   color: #bbb;
 }
+
+// playlist index
+
+.playlist-thumb {
+  height: 190px;
+  width: 190px;
+  background: #eee;
+  margin: 10px;
+  float: left
+}
+
+.playlist-thumb-title {
+  background: black;
+  color: white;
+  display: inline;
+  padding: 5px;
+
+}
+
+.playlist-thumb-count {
+  position: relative;
+  text-align: center;
+  padding: 13px 0 0 0 ;
+  background: black;
+  color: white;
+  width: 60px;
+  height: 47px;
+  border-radius: 50%;
+  display: inline;
+  left: 20px;
+  top: 50px;
+  font-size: 12px;
+}
