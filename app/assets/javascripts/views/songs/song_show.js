@@ -6,7 +6,8 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   className: 'song-show',
 
   events: {
-    'click .add-to-playlist': 'addToPlaylist'
+    'click .add-to-playlist': 'addToPlaylist',
+    'click .play-button': 'playMusic'
   },
 
   render: function() {
@@ -20,6 +21,10 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
     var view = new EclecticEar.Views.PlaylistSongForm({playlist_song: playlistSong});
     $('body').append(view.render().$el);
   },
+
+  playMusic: function() {
+    alert('play!');
+  }
 
 
 });

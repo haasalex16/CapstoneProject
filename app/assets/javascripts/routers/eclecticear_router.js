@@ -19,8 +19,10 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
   },
 
   songForm: function(){
+    var song = new EclecticEar.Models.Song()
     var view = new EclecticEar.Views.SongForm({
-                    collection: EclecticEar.Collections.songs
+                    collection: EclecticEar.Collections.songs,
+                    model: song
                     });
     this._swapView(view);
   },

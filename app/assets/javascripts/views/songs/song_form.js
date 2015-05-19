@@ -6,7 +6,8 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
   className: 'uploader',
 
   events: {
-    'click button': 'submit'
+    'click button': 'submit',
+    "change #input-music": "fileInputChange"
   },
 
   render: function() {
@@ -19,7 +20,7 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var attrs = $(this.$el).serializeJSON();
-    var song = new EclecticEar.Models.Song()
+    var song = this.model;
     var collection = this.collection;
     song.set(attrs);
     song.save({},{
@@ -31,5 +32,27 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
         Backbone.history.navigate("", {trigger: true});
       }
     })
-  }
+  },
+
+  fileInputChange: function(event){
+    console.log(event.currentTarget.files[0]);
+
+    var that = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function(){
+      that.model._music = reader.result;
+      console.log(that.model);
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      delete that.model._music;
+      console.log(that.model);
+    }
+  },
+
+
 });

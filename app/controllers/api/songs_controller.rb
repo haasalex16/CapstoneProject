@@ -2,11 +2,6 @@ class Api::SongsController < ApplicationController
 
   wrap_parameters false
 
-  def new
-    @song = Song.new
-    render json: @song
-  end
-
   def create
     @song = current_user.songs.new(song_params)
     if @song.save

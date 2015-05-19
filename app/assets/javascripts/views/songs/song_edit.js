@@ -40,29 +40,28 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   },
 
   fileInputChange: function(event){
-  console.log(event.currentTarget.files[0]);
+    console.log(event.currentTarget.files[0]);
 
+    var that = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
 
-  var that = this;
-  var file = event.currentTarget.files[0];
-  var reader = new FileReader();
+    reader.onloadend = function(){
+      that._updatePreview(reader.result);
+      that.model._album_art = reader.result;
+      console.log(that.model);
+    }
 
-  reader.onloadend = function(){
-    that._updatePreview(reader.result);
-    that.model._album_art = reader.result;
-    console.log(that.model);
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      that._updatePreview("");
+      delete that.model._album_art;
+      console.log(that.model);
+    }
+  },
+
+  _updatePreview: function(src){
+    this.$el.find(".album-art-large").attr("src", src);
   }
-
-  if (file) {
-    reader.readAsDataURL(file);
-  } else {
-    that._updatePreview("");
-    delete that.model._album_art;
-    console.log(that.model);
-  }
-},
-
-_updatePreview: function(src){
-  this.$el.find(".album-art-large").attr("src", src);
-}
 });

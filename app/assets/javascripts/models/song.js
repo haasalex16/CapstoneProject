@@ -16,7 +16,10 @@ EclecticEar.Models.Song = Backbone.Model.extend ({
     if (this._album_art) {
       json.song.album_art = this._album_art;
     }
-    
+
+    if (this._music) {
+      json.song.music = this._music;
+    }
     return json;
   },
 
