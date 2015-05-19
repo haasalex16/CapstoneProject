@@ -8,6 +8,7 @@ json.followees @user.followees do |followee|
   json.username followee.username
 end
 json.songs @user.songs do | song |
+  json.album_art_url asset_path(song.album_art.url(:original))
   json.id song.id
   json.title song.title
   json.owner do

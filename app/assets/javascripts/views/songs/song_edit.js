@@ -4,6 +4,7 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   events: {
     'click .remove-tag' :'removeTag',
     'click .edit-song': 'submit',
+    "change #input-post-album_art": "fileInputChange"
   },
 
   className: 'edit-view group',
@@ -24,8 +25,7 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var attrs = this.$('.edit-form').serializeJSON();
-    this.model.set(attrs);
-    this.model.save();
+    this.model.save(attrs);
   },
 
   removeTag: function(event) {
@@ -37,5 +37,32 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   addTagForm: function(){
     var view = new EclecticEar.Views.TagForm({song: this.model});
     this.addSubview(".add-tag", view);
+  },
+
+  fileInputChange: function(event){
+  console.log(event.currentTarget.files[0]);
+
+
+  var that = this;
+  var file = event.currentTarget.files[0];
+  var reader = new FileReader();
+
+  reader.onloadend = function(){
+    that._updatePreview(reader.result);
+    that.model._album_art = reader.result;
+    console.log(that.model);
   }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    that._updatePreview("");
+    delete that.model._album_art;
+    console.log(that.model);
+  }
+},
+
+_updatePreview: function(src){
+  this.$el.find(".album-art-large").attr("src", src);
+}
 });

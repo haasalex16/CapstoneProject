@@ -25,7 +25,7 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
     song.save({},{
       success: function(){
         collection.add(song, {merge: true});
-        Backbone.history.navigate("", {trigger: true});
+        Backbone.history.navigate("songs/"+song.get('id')+"/edit", {trigger: true});
       },
       error: function() {
         Backbone.history.navigate("", {trigger: true});

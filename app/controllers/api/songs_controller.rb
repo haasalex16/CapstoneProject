@@ -1,5 +1,7 @@
 class Api::SongsController < ApplicationController
 
+  wrap_parameters false
+
   def new
     @song = Song.new
     render json: @song
@@ -35,7 +37,7 @@ class Api::SongsController < ApplicationController
 
   private
     def song_params
-      params.require(:song).permit(:title, :upload_id)
+      params.require(:song).permit(:title, :upload_id, :album_art)
     end
 
 end

@@ -2,9 +2,7 @@
 
 <%= song.escape('title') %>
 
-<div class="album-art-large">
-
-</div>
+<img class="album-art-large" src="<%= song.get('album_art_url') %>"/>
 
 <form class='edit-form'>
   <label>Title *</label>
@@ -24,5 +22,6 @@
 
 
   <button class=edit-song>Save Changes</button>
-
+<label>Update Art</label>
+<input type="file" name="album_art" id="input-post-album_art">
 </form>
