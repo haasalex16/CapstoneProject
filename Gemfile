@@ -34,7 +34,7 @@ gem 'backbone-on-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 gem 'figaro'
 
