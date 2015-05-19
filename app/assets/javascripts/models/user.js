@@ -6,10 +6,10 @@ EclecticEar.Models.User = Backbone.Model.extend({
       this.songs().set(response.songs, {parse: true});
       delete response.songs;
     }
-    // if (response.followers) {
-    //   this.followers().set(response.followers, {parse: true});
-    //   delete response.followers;
-    // }
+    if (response.followers) {
+      this.followers().set(response.followers);
+      delete response.followers;
+    }
     if (response.playlists) {
       this.playlists().set(response.playlists, {parse: true});
       delete response.playlists;
@@ -24,13 +24,13 @@ EclecticEar.Models.User = Backbone.Model.extend({
     }
     return this._songs;
   },
-  //
-  // followers: function() {
-  //   if (!this._followers) {
-  //     this._followers = new EclecticEar.Collections.Users();
-  //   }
-  //   return this._followers;
-  // },
+
+  followers: function() {
+    if (!this._followers) {
+      this._followers = new EclecticEar.Collections.Users();
+    }
+    return this._followers;
+  },
 
   playlists: function() {
     if (!this._playlists) {
