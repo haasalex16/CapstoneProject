@@ -23,7 +23,8 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   },
 
   playMusic: function() {
-    alert('play!');
+    this.$el.find('#audio-player')[0].setAttribute('src', this.model.get('music_url'));
+    this.$el.find('#audio-player')[0].play();
   }
 
 
