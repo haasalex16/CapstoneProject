@@ -8,7 +8,6 @@ json.array! @songs do | song |
     json.username User.find(song.user_id).username
     json.created_at User.find(song.user_id).created_at
   end
-  json.upload_id song.upload_id
   json.created_at song.created_at
   json.taggings song.taggings do |tagging|
     json.id tagging.id

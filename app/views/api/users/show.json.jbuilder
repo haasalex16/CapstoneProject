@@ -15,7 +15,6 @@ json.songs @user.songs do | song |
     json.id song.user_id
     json.username User.find(song.user_id).username
   end
-  json.upload_id song.upload_id
   json.created_at song.created_at
   json.taggings song.taggings do |tagging|
     json.id tagging.id
@@ -35,7 +34,6 @@ json.playlists @user.playlists do |playlist|
       json.id song.user_id
       json.username User.find(song.user_id).username
     end
-    json.upload_id song.upload_id
     json.created_at song.created_at
     json.taggings song.taggings do |tagging|
       json.id tagging.id
