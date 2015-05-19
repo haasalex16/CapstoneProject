@@ -2,6 +2,7 @@ json.array! @songs do | song |
   json.id song.id
   json.title song.title
   json.album_art_url asset_path(song.album_art.url(:original))
+  json.music_url asset_path(song.music.url(:original))
   json.owner do
     json.id song.user_id
     json.email User.find(song.user_id).email
