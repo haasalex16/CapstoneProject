@@ -1,6 +1,7 @@
 json.id @user.id
 json.username @user.username
 json.email @user.email
+json.avatar_url asset_path(@user.avatar.url(:original))
 json.followers @user.followers.count
 json.followees @user.followees do |followee|
   json.follow   current_user.follow?(followee)

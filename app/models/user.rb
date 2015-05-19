@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :session_token, presence: true, uniqueness: true
 
+  has_attached_file :avatar, default_url: "default_avatar.jpg"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   has_many :songs, dependent: :destroy
   has_many :in_follows,
     class_name: 'Follow',

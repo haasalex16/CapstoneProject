@@ -18,6 +18,19 @@ EclecticEar.Models.User = Backbone.Model.extend({
     return response;
   },
 
+
+  toJSON: function(){
+    // We want proper namespacing of our attributes in Rails.
+    var json = {user: _.clone(this.attributes)};
+
+    if (this._avatar) {
+      json.song.avatar = this._avatar;
+    }
+
+    return json;
+  },
+
+
   songs: function() {
     if (!this._songs) {
       this._songs = new EclecticEar.Collections.Songs();
