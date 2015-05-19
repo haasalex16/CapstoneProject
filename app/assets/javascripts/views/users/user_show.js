@@ -31,7 +31,7 @@ EclecticEar.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   showFollowing: function() {
-    var view = new EclecticEar.Views.UsersIndex({collection: this.model.followers()});
+    var view = new EclecticEar.Views.UsersIndex({collection: this.model.followees()});
     this._swapView(view);
   },
 

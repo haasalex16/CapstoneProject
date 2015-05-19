@@ -1,7 +1,12 @@
-<% playlists.each(function(playlist){ %>
-  <div class="playlist-thumb">
-    <a class="playlist-thumb-title" href="#/playlists/<%= playlist.get('id') %>">
-      <%= playlist.escape('title') %>
-    </a>
-  </div>
-<% }) %>
+
+<% if (playlists.length === 0) { %>
+  <h1>No Playlists Yet</h1>
+<% } else { %>
+  <% playlists.each(function(playlist){ %>
+    <div class="playlist-thumb">
+      <a class="playlist-thumb-title" href="#/playlists/<%= playlist.get('id') %>">
+        <%= playlist.escape('title') %>
+      </a>
+    </div>
+  <% }) %>
+<%  }%>

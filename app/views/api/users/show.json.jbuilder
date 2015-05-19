@@ -1,9 +1,11 @@
 json.id @user.id
 json.username @user.username
 json.email @user.email
-json.followers @user.followers do |follower|
-  json.id follower.id
-  json.username follower.username
+json.followers @user.followers.count
+json.followees @user.followees do |followee|
+  json.follow   current_user.follow?(followee)
+  json.id followee.id
+  json.username followee.username
 end
 json.songs @user.songs do | song |
   json.id song.id
