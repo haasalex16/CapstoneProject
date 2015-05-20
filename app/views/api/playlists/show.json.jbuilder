@@ -1,5 +1,6 @@
 json.id @playlist.id
 json.title @playlist.title
+json.cover_url asset_path(@playlist.cover.url(:original))
 json.created_at @playlist.created_at
 json.owner do
   json.id @playlist.user_id

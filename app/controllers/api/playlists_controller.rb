@@ -25,8 +25,14 @@ class Api::PlaylistsController < ApplicationController
     render :show
   end
 
+  def update
+    @playlist = Playlist.find(params[:id])
+    @playlist.update(playlist_params)
+    render json: @playlist
+  end
+
   private
     def playlist_params
-      params.require(:playlist).permit(:title)
+      params.require(:playlist).permit(:title, :cover)
     end
 end

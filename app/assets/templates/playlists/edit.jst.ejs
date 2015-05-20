@@ -1,0 +1,29 @@
+
+<header class="playlist-show-header">
+  <div class="play-button">
+    <div class="arrow"></div>
+  </div>
+
+  <form class='edit-form'>
+    <input class="playlist-name" type="text" name="title" value="<%= playlist.escape('title') %>">
+
+    <div class="track-count">
+      <%= playlist.songs().length %>
+      <br>TRACKS
+    </div>
+
+    <input type="file" name="cover" id="input-playlist-cover">
+    </form>
+    <img class='album-art-large' src="<%= playlist.get('cover_url') %>"/>
+
+    <p class="time-ago">
+      <%= playlist.timeSince(Date.parse(playlist.get('created_at'))) %>
+    </p>
+    <button class=edit-song>Save Changes</button>
+  </form>
+
+</header>
+
+<ul class='playlist-songs'>
+
+</ul>

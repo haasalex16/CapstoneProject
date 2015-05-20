@@ -10,9 +10,7 @@
     <br>TRACKS
   </div>
 
-  <section class='album-art-large'>
-
-  </section>
+  <img class='album-art-large' src="<%= playlist.get('cover_url') %>"/>
 
   <p class="time-ago">
     <%= playlist.timeSince(Date.parse(playlist.get('created_at'))) %>

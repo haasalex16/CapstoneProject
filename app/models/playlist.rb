@@ -10,4 +10,7 @@ class Playlist < ActiveRecord::Base
   belongs_to :user
   has_many :playlist_songs
   has_many :songs, through: :playlist_songs, source: :song
+
+  has_attached_file :cover, default_url: "playlist.png"
+  validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
 end
