@@ -1,4 +1,9 @@
 class Song < ActiveRecord::Base
+
+  include PgSearch
+
+  multisearchable against: :title
+
   validates :user_id, presence: true
   validates :title, presence: true
   # validates_attachment_presence :music

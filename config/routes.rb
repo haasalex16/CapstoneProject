@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session, only: [:create, :new, :destroy]
+  get "search", to: "static_pages#search"
 
   namespace :api, defaults: {format: :json} do
     resources :songs
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
     resources :tags, only: [:create, :destroy, :index]
     resources :playlists, only: [:create, :show, :edit, :index, :destroy]
     resources :playlist_songs, only: [:create]
+
   end
 end

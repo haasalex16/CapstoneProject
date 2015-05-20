@@ -1,4 +1,9 @@
 class Playlist < ActiveRecord::Base
+
+  include PgSearch
+
+  multisearchable against: :title
+
   validates :title, presence: true
   validates :user_id, presence: true
 
