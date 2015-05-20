@@ -4,26 +4,31 @@
   <div class="arrow"></div>
 </div>
 
-<a href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
+<section class=top-row>
 
-<div class="time-ago">
-  <p>
-    <%= song.timeSince(Date.parse(song.get('created_at'))) %>
-  </p>
-</div>
+  <a class="result-light left" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
 
-<% if(currentUser.get('id') === song.get('owner').id){ %>
-  <a class='title' href="#/songs/<%= song.get('id') %>/edit">
-    <%= song.escape('title') %>
-  </a>
-<%  } else { %>
-  <p class='title'><%= song.escape('title') %> </p>
-<%  }%>
-<div class="music-player">
-  <audio id="audio-player" src="" controls>
-  </audio>
-  <p>
-    <%= song.get('music_url') %>
-  </p>
-</div>
-<button class="add-to-playlist">Add to playlist</button>
+  <div class="result-bold right">
+    <p>
+      <%= song.timeSince(Date.parse(song.get('created_at'))) %>
+    </p>
+  </div>
+</section>
+
+<section class=top-row>
+  <% if(currentUser.get('id') === song.get('owner').id){ %>
+    <a class="result-bold left" href="#/songs/<%= song.get('id') %>/edit">
+      <%= song.escape('title') %>
+    </a>
+  <%  } else { %>
+    <p class="result-bold left"><%= song.escape('title') %> </p>
+  <%  }%>
+</section>
+
+<section class="bottom-row">
+    <audio id="audio-player" src="" controls></audio>
+</section>
+
+<section class="bottom-row">
+  <button class="add-to-playlist">Add to playlist</button>
+</section>

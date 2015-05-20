@@ -2,6 +2,8 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 
 	template: JST["search/search"],
 
+	className: 'group',
+
   initialize: function () {
 		this.collection = new EclecticEar.Collections.SearchResults();
 		this.listenTo(this.collection, "sync", this.renderResults);
@@ -47,9 +49,11 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 		var view;
 		this.collection.each(function (result) {
 			if (result instanceof EclecticEar.Models.User) {
-				view = new EclecticEar.Views.UserListItem({ model: result });
+				view = new EclecticEar.Views.SearchUser({ model: result });
 			} else if (result instanceof EclecticEar.Models.Song) {
 				view = new EclecticEar.Views.SongShow({ model: result });
+			} else if (result instanceof EclecticEar.Models.Playlist) {
+				view = new EclecticEar.Views.SearchPlaylist({ model: result });
 			}
 
 			$container.append(view.render().$el);

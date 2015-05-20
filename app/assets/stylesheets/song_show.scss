@@ -1,10 +1,8 @@
 .song-show {
   float: left;
-  width: 600px;
-  height: 170px;
-  margin: 20px;
-  border: 2px solid black;
-
+  width: 630px;
+  height: 130px;
+  margin: 10px 0 20px 0;
 }
 
 .play-button {
@@ -13,7 +11,6 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  margin: 10px 5px 0 5px;
 }
 
 .arrow {
@@ -24,37 +21,46 @@
 	height: 0;
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
-
 	border-left:15px solid black;
-
 }
 
 .album-art {
   float: left;
   background: #bbb;
-  width: 130px;
-  height: 130px;
-  margin: 10px 10px 30px 10px;
+  width: 120px;
+  height: 120px;
+  margin: 0 10px 10px 0;
 }
 
-.song-show > .title,
-.song-show > a,
-.time-ago {
+.top-row {
   float: left;
-  height: 18px;
-  border: 1px solid #eee;
-  margin: 10px 10px 0 10px;
-  overflow: hidden;
+  width: 445px;
+  height: 30px;
+  padding-left: 5px;
+}
+
+.bottom-row {
+  float: left;
+  width: 500px;
+  height: 30px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 audio {
-  width: 430px;
+  width: 500px;
 }
 
 .add-to-playlist {
   float: left;
   border: 1px solid #eee;
-  margin-left: 10px;
+  margin: 10px;
   font-size: 10px;
   padding: 2px 5px;
   border-radius: 5px;
@@ -63,19 +69,4 @@ audio {
 .add-to-playlist:hover {
   cursor: pointer;
   background: #eee;
-}
-
-.time-ago {
-  float: right;
-}
-.song-show > .title {
-  width: 368px;
-}
-.music-player {
-  float: left;
-  height: 70px;
-  margin: 10px;
-  background: #eee;
-  color: orange;
-  width: 430px;
 }

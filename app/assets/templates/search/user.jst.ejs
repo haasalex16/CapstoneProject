@@ -1,0 +1,11 @@
+<img class="avatar" src='<%= user.get('avatar_url') %>'/>
+
+<a class="result-bold" href="#/users/<%= user.id %>"><%= user.get('username') %></a>
+
+<p class="info-small">
+  <%= user.escape('songs') %> Songs
+</p>
+
+<p class="info-small">
+  <%= user.escape('followers') %> Followers
+</p>
