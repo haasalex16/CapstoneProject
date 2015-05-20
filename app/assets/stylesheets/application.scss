@@ -375,3 +375,20 @@ header {
   float: right;
   padding: 5px;
 }
+
+// search
+
+#query {
+  background: #bbbbbb;
+  color: #000000;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: block;
+}
+
+.third {
+  width: 33%;
+  float: left;
+  border: 1px solid #eeeeee;
+  min-height: 100px;
+}

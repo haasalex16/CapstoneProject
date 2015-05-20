@@ -8,7 +8,7 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
   events: {
     'click .showStream': 'showStream',
   },
-
+  
   render: function() {
     view = this.template();
     this.$el.html(view);

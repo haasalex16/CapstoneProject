@@ -6,7 +6,8 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     "users": 'usersIndex',
     "users/:id": 'usersShow',
     "songs/:id/edit": 'editSong',
-    "playlists/:id": 'showPlaylist'
+    "playlists/:id": 'showPlaylist',
+    'search': 'search'
   },
 
   initialize: function(options) {
@@ -15,6 +16,11 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
 
   home: function() {
     var view = new EclecticEar.Views.HomeShow();
+    this._swapView(view);
+  },
+
+  search: function() {
+    var view = new EclecticEar.Views.SearchShow();
     this._swapView(view);
   },
 
