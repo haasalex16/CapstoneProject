@@ -62,6 +62,10 @@ header {
   font-weight: bold;
 }
 
+.active {
+  color: #FF5500;
+}
+
 .header {
   width: 900px;
   margin: auto;
@@ -154,21 +158,20 @@ header {
 
 }
 
+// song uploader
 
-.uploader h1 {
-  padding: 10px;
-  text-align: center;
-}
 
 .uploader {
-  width: 300px;
+  width: 400px;
   margin: 10px auto;
-  border: solid black 1px;
 }
 
-.uploader input {
-  border: 1px solid black;
+.form-header {
+  font-size: 28px;
+  margin: 0 5px 20px 0;
+  border-bottom: 1px solid #FF5500;
 }
+
 
  /*users*/
 

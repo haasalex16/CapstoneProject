@@ -21,16 +21,25 @@ EclecticEar.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   showFeed: function() {
+    $('.showFeed').addClass('active');
+    $('.showPlaylists').removeClass('active');
+    $('.showFollowing').removeClass('active');
     var view = new EclecticEar.Views.SongsIndex({collection: this.model.songs()});
     this._swapView(view);
   },
 
   showPlaylists: function() {
+    $('.showPlaylists').addClass('active');
+    $('.showFeed').removeClass('active');
+    $('.showFollowing').removeClass('active');
     var view = new EclecticEar.Views.PlaylistUserIndex({collection: this.model.playlists()});
     this._swapView(view);
   },
 
   showFollowing: function() {
+    $('.showFollowing').addClass('active');
+    $('.showFeed').removeClass('active');
+    $('.showPlaylists').removeClass('active');
     var view = new EclecticEar.Views.UsersIndex({collection: this.model.followees()});
     this._swapView(view);
   },
