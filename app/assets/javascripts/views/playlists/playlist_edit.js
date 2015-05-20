@@ -1,14 +1,16 @@
 EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   template: JST['playlists/edit'],
+
   className: 'playlist-edit group',
 
   initialize: function() {
+    this.addSongs();
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model, 'sync', this.addSongs);
+    // this.listenTo(this.model, 'sync', this.addSongs);
   },
 
   events: {
-    'click .edit-song': 'submit',
+    'click .edit-playlist': 'submit',
     "change #input-playlist-cover": "fileInputChange"
   },
 
@@ -49,7 +51,7 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   },
 
   _updatePreview: function(src){
-    this.$el.find(".album-art-large").attr("src", src);
+    this.$el.find(".cover-large").attr("src", src);
   },
 
   addSongs: function() {

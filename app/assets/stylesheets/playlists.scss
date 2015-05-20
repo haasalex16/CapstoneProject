@@ -3,21 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .playlist-show .playlist-edit {
-  position: relative;
-  width: 900px;
-  margin: auto;
-}
-
-.playlist-show-header {
-  width: 860px;
-  background: white;
+  display: block;
   height: 300px;
-  padding: 20px;
-  position: static;
 }
 
-.playlist-show-header .album-art-large {
+.playlist-name {
+  margin: 5px;
+}
+
+.playlist-header {
+  margin: auto;
+  width: 600px;
+}
+
+#input-playlist-cover {
+  clear: right;
+}
+
+.playlist-top-row {
+  float: left;
+  height: 25px;
+  width: 255px;
+}
+
+.playlist-bottom-row {
+  clear: both;
+  height: 25px;
+  width: 100%;
+}
+
+.cover-large {
   float: right;
+  height: 250px;
+  width: 250px;
 }
 
 .playlist-name {
@@ -37,15 +55,15 @@
   color: white;
   border-radius: 50%;
   display: inline;
-  top: 240px;
+  top: 140px;
   left: 20px;
 }
+
+// playlist songs
 
 .album-art-thumb {
   height: 50px;
   width: 50px;
-  background: #ccc;
-  float: left;
 }
 
 .playlist-song-show {
