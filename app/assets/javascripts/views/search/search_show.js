@@ -1,42 +1,70 @@
 EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
-  template: JST['search/show'],
 
-  className: 'group',
-
-  events: {
-    'keyup #query': 'search'
-  },
+	template: JST["search/search"],
 
   initialize: function () {
-    this.collection = new EclecticEar.Collections.SearchResults();
-    // this.listenTo(this.collection, "sync", this.render);
-  },
+		this.collection = new EclecticEar.Collections.SearchResults();
+		this.listenTo(this.collection, "sync", this.renderResults);
+	},
 
-  render: function() {
-    var view = this.template();
-    this.$el.html(view);
+	events: {
+		"click button": "search",
+		"click .next-page": "nextPage"
+	},
 
-    return this;
-  },
 
-  search: function(event) {
-    var input = this.$("#query").val();
-    this.userSearch(input);
-  },
+	render: function () {
+		var content = this.template();
+		this.$el.html(content);
 
-  userSearch: function(input) {
-    this.collection.searchInfo.query = input;
-    var that = this;
-    this.collection.fetch({
-      data: {
-    			query: this.collection.searchInfo.query
-    		},
-      success: function (collection, response) {
-        debugger;
-        console.log(that.collection.length);
-      }
-    });
-  }
+		return this;
+	},
 
+	search: function (event) {
+		event.preventDefault();
+		var $input = this.$("#query");
+		this.collection.searchInfo.query = $input.val();
+		this.collection.searchInfo.page = 1;
+
+		var that = this;
+		this.collection.fetch({
+			data: this.collection.searchInfo,
+			// {
+	// 			query: this.collection.searchInfo.query,
+	// 			page: this.collection.searchInfo.pageNum
+	// 		},
+			success: function () {
+				console.log(that.collection.length);
+			}
+		});
+	},
+
+	renderResults: function () {
+		this.renderSearchInfo();
+		var $container = this.$("#search-results");
+		$container.empty();
+
+		var view;
+		this.collection.each(function (result) {
+			if (result instanceof EclecticEar.Models.User) {
+				view = new EclecticEar.Views.UserListItem({ model: result });
+			} else if (result instanceof EclecticEar.Models.Song) {
+				view = new EclecticEar.Views.SongShow({ model: result });
+			}
+
+			$container.append(view.render().$el);
+		});
+	},
+
+	nextPage: function () {
+		this.collection.searchInfo.page++
+		this.collection.fetch({
+			data: this.collection.searchInfo
+		});
+	},
+
+	renderSearchInfo: function () {
+		this.$("#pages").html(this.collection.searchInfo.totalPages);
+	}
 
 });
