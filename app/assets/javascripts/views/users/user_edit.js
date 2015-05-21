@@ -29,7 +29,7 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
 
   removeUser: function (event) {
     this.model.destroy();
-    // Backbone.history.navigate("", {trigger: true});
+    window.location = '/';
   },
 
   fileInputChange: function(event){

@@ -59,7 +59,7 @@ body, html {
 /*header*/
 
 header {
-  z-index: 200;
+  z-index: 1;
   width: 100%;
   position: fixed;
   color: #949494;
@@ -279,6 +279,7 @@ header {
 .none {
   padding: 10px;
   font-size: 24px;
+  clear: both;
 }
 
 /*tag*/
@@ -402,13 +403,14 @@ header {
   position: relative;
   top: 100px;
   margin: auto;
-  width: 550px;
+  width: 450px;
   background: #ffffff;
   z-index: 4;
   height: 400px;
 }
 
 .new-or-old-playlist {
+  clear: both;
   background: white;
   padding: 25px;
   height: 100%;
@@ -428,6 +430,7 @@ header {
   width: 100%;
   border-radius: 5px;
   display: block;
+  padding: 5px;
 }
 
 .submit-button {

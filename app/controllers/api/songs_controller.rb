@@ -19,6 +19,11 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
+  def explore
+    @songs = Song.limit(5).order("RANDOM()");
+    render :index
+  end
+
   def show
     @song = Song.find(params[:id])
     render :show

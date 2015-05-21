@@ -1,12 +1,12 @@
  <% if (playlists.length === 0) { %>
-   <p>
+   <p class="none">
      No Playlists Yet
    </p>
  <% } %>
 
 <ul>
   <% playlists.each(function(playlist) { %>
-    <li>
+    <li class='result-bold'>
     <%= playlist.escape('title') %>
     <button class="add-to-playlist" data-id="<%= playlist.id %>">Add to playlist</button>
     </li>
