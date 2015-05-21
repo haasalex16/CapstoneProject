@@ -10,6 +10,17 @@ EclecticEar.Collections.SearchResults = Backbone.Collection.extend({
 		return response.search_results;
 	},
 
+  comparator: function(songOne, songTwo) {
+
+    if (songOne.get('created_at') > songTwo.get('created_at')) {
+      return -1;
+    } else if (songOne.get('created_at') < songTwo.get('created_at')) {
+      return 1;
+    } else {
+      return 0;
+    }
+  },
+
 	url: "/search",
 
 	model: function (attrs) {
@@ -17,12 +28,6 @@ EclecticEar.Collections.SearchResults = Backbone.Collection.extend({
 		delete attrs._type;
 
 		var newModel;
-		// if (type === "User") {
-		// 	newModel = new Demo.Models.User(attrs);
-		// } else if (type === "Post") {
-		// 	newModel = new Demo.Models.Post(attrs);
-		// }
-
 		newModel = new EclecticEar.Models[type](attrs);
 
 		return newModel;

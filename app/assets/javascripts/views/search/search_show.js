@@ -10,8 +10,12 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"click button": "search",
-		"click .next-page": "nextPage"
+		"submit form": "search",
+		"click .next-page": "nextPage",
+		'click .results-user': 'renderUserResults',
+		'click .results-all': 'renderResults',
+		'click .results-playlist': 'renderPlaylistResults',
+		'click .results-song': 'renderSongResults'
 	},
 
 
@@ -31,10 +35,6 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 		var that = this;
 		this.collection.fetch({
 			data: this.collection.searchInfo,
-			// {
-	// 			query: this.collection.searchInfo.query,
-	// 			page: this.collection.searchInfo.pageNum
-	// 		},
 			success: function () {
 				console.log(that.collection.length);
 			}
@@ -42,6 +42,10 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 	},
 
 	renderResults: function () {
+		$('.results-all').addClass('active');
+		$('.results-user').removeClass('active');
+		$('.results-song').removeClass('active');
+		$('.results-playlist').removeClass('active');
 		this.renderSearchInfo();
 		var $container = this.$("#search-results");
 		$container.empty();
@@ -60,6 +64,60 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 		});
 	},
 
+	renderUserResults: function() {
+		$('.results-user').addClass('active');
+		$('.results-all').removeClass('active');
+		$('.results-song').removeClass('active');
+		$('.results-playlist').removeClass('active');
+		this.renderSearchInfo();
+		var $container = this.$("#search-results");
+		$container.empty();
+
+		var view;
+		this.collection.each(function (result) {
+			if (result instanceof EclecticEar.Models.User) {
+				view = new EclecticEar.Views.SearchUser({ model: result });
+			$container.append(view.render().$el);
+			}
+		});
+	},
+
+	renderPlaylistResults: function() {
+		$('.results-playlist').addClass('active');
+		$('.results-all').removeClass('active');
+		$('.results-song').removeClass('active');
+		$('.results-user').removeClass('active');
+		this.renderSearchInfo();
+		var $container = this.$("#search-results");
+		$container.empty();
+
+		var view;
+		this.collection.each(function (result) {
+			if (result instanceof EclecticEar.Models.Playlist) {
+				view = new EclecticEar.Views.SearchPlaylist({ model: result });
+			$container.append(view.render().$el);
+			}
+		});
+	},
+
+	renderSongResults: function() {
+		$('.results-song').addClass('active');
+		$('.results-all').removeClass('active');
+		$('.results-user').removeClass('active');
+		$('.results-playlist').removeClass('active');
+		this.renderSearchInfo();
+		var $container = this.$("#search-results");
+		$container.empty();
+
+		var view;
+		this.collection.each(function (result) {
+			if (result instanceof EclecticEar.Models.Song) {
+				view = new EclecticEar.Views.SongShow({ model: result });
+			$container.append(view.render().$el);
+			}
+		});
+	},
+
 	nextPage: function () {
 		this.collection.searchInfo.page++
 		this.collection.fetch({
@@ -68,7 +126,7 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 	},
 
 	renderSearchInfo: function () {
-		this.$("#pages").html(this.collection.searchInfo.totalPages);
+		this.$("#pages").html(this.collection.searchInfo.page + " of " + this.collection.searchInfo.totalPages);
 	}
 
 });
