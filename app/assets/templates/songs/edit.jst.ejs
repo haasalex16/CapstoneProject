@@ -1,13 +1,16 @@
-<p><%= EclecticEar.currentUser.get('username') %></p>
+<p class="result-bold"><%= EclecticEar.currentUser.get('username') %></p>
+
+<p class="result-bold">
 
 <%= song.escape('title') %>
+</p>
 
 <img class="album-art-large" src="<%= song.get('album_art_url') %>"/>
 
 <form class='edit-form'>
-  <label>Title *</label>
-  <input type="text" name="title" value="<%= song.escape('title') %>">
-  <p>
+  <label class='form-label'>Title *</label>
+  <input class="input' type="text" name="title" value="<%= song.escape('title') %>">
+  <p class='form-label'>
     Tags
   </p>
   <section class="tags group">
@@ -21,7 +24,9 @@
   </section>
 
 
-  <button class=edit-song>Save Changes</button>
-<label>Update Art</label>
-<input type="file" name="album_art" id="input-post-album_art">
+  <label class='form-label'>Update Art</label>
+  <input type="file" name="album_art" id="input-post-album_art">
+  <button class="submit-button left">Save Changes</button>
 </form>
+
+<button class="delete-button left">Remove Song</button>

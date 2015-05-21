@@ -434,16 +434,17 @@ header {
   background: #FF5500;
   color: white;
   border-radius: 5px;
-  float: right;
   padding: 5px;
+  cursor: pointer;
 }
 
-.submit-button-left {
-  background: #FF5500;
+.delete-button {
+  margin-top: 10px;
+  background: #FF4D4D;
   color: white;
   border-radius: 5px;
-  float: left;
   padding: 5px;
+  cursor: pointer;
 }
 
 // search

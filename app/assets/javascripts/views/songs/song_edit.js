@@ -3,7 +3,8 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
 
   events: {
     'click .remove-tag' :'removeTag',
-    'click .edit-song': 'submit',
+    'click .submit-button': 'submit',
+    'click .delete-button': 'removeSong',
     "change #input-post-album_art": "fileInputChange"
   },
 
@@ -22,10 +23,15 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
     return this;
   },
 
-  submit: function(event) {
+  submit: function (event) {
     event.preventDefault();
     var attrs = this.$('.edit-form').serializeJSON();
     this.model.save(attrs);
+  },
+
+  removeSong: function (event) {
+    this.model.destroy();
+    Backbone.history.navigate("", {trigger: true});
   },
 
   removeTag: function(event) {
