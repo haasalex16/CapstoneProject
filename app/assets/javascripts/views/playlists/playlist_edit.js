@@ -10,7 +10,8 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   },
 
   events: {
-    'click .edit-playlist': 'submit',
+    'click .submit-button': 'submit',
+    'click .delete-button': 'removePlaylist',
     "change #input-playlist-cover": "fileInputChange"
   },
 
@@ -31,6 +32,13 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
       }.bind(this)
     });
   },
+
+  removePlaylist: function(event) {
+    event.preventDefault();
+    this.model.destroy();
+    Backbone.history.navigate('#',{trigger: true})
+  },
+
 
   fileInputChange: function(event){
     console.log(event.currentTarget.files[0]);
