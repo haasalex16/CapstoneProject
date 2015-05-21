@@ -46,6 +46,7 @@ ul {
 
 body, html {
   background-image: url("home-2.jpg"), url("home-2.jpg");
+  background-repeat: no-repeat;
   font-family: sans-serif;
   padding: 1px;
 }
@@ -58,7 +59,7 @@ body, html {
 /*header*/
 
 header {
-  z-index: 1;
+  z-index: 200;
   width: 100%;
   position: fixed;
   color: #949494;
@@ -116,6 +117,47 @@ header {
 .header-sign-in:hover,
 .header-sign-up:hover, {
   border: 1px solid white;
+}
+
+// universal-player
+
+.hide {
+  bottom: -60px;
+}
+
+.show {
+  bottom: 0px;
+}
+
+.universal-player{
+  z-index: 100;
+  transition: bottom 2s;
+  transform: translateX(-275px);
+  position: fixed;
+  left: 50%;
+  height: 60px;
+  width: 550px;
+  background: #cccccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.universal-player-player,
+.universal-player-title{
+  color: black;
+  display: block;
+  padding: 6px 0 0 5px;
+  overflow: hidden;
+  width: 460px;
+  float: left;
+}
+
+.universal-player-art{
+  margin-left: 10px;
+  height: 60px;
+  width: 60px;
+  background: black;
+  float:left;
 }
 
 /*body*/
