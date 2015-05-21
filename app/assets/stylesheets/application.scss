@@ -45,9 +45,13 @@ ul {
 /*page*/
 
 body, html {
-  background: #F2F2F2;
+  background-image: url("home-2.jpg"), url("home-2.jpg");
   font-family: sans-serif;
   padding: 1px;
+}
+
+.logged-in {
+  background: #F2F2F2;
 }
 
 
@@ -99,6 +103,7 @@ header {
   color: #FFFFFF;
   padding: 5px;
   border-radius: 5px;
+  border: 1px solid #FF5500;
 }
 
 .header-sign-in {
@@ -108,8 +113,9 @@ header {
   border-radius: 5px;
 }
 
-.header-sign-in:hover {
-  border: 1px solid #999999
+.header-sign-in:hover,
+.header-sign-up:hover, {
+  border: 1px solid white;
 }
 
 /*body*/
@@ -120,29 +126,19 @@ header {
   position: relative;
   width: 900px;
   margin: auto;
-  background: #FFFFFF;
-  height: 100%;
 }
 
+.white {
+  background: white;
+}
 
 .sign-in-up {
-  color: #FFFFFF;
-  text-align: center;
-  background: #FF5500;
-  width: 200px;
+  width: 300px;
   margin: 20px auto;
+  background: white;
+  padding: 15px;
   border-radius: 5px;
-}
-
-
-.sign-in-up label,
-.sign-in-up input {
-  margin: 10px;
-}
-
-.sign-in-up > h1 {
-  font-size: 24px;
-  padding: 5px 0 10px 0;
+  border: 1px solid #8D7857;
 }
 
 /*feed*/

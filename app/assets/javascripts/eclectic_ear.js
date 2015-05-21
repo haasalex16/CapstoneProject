@@ -8,5 +8,8 @@ window.EclecticEar = {
     this.currentUser.fetch();
     new EclecticEar.Routers.Router({$rootEl: $('#main')});
     Backbone.history.start();
+    $('html').addClass('logged-in');
+    $('body').addClass('logged-in');
+    $('.content').addClass('white');
   }
 };

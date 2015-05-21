@@ -1,17 +1,14 @@
 
 <section class='sign-in-up'>
-  <h1>Sign In</h1>
+  <h1 class="form-header">Sign In</h1>
 
-  <form action="<%= session_url %>" method="post">
+  <form class="group" action="<%= session_url %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <label>Username:</label>
-    <input type="text" name="user[username]">
-
-    <label>Password:</label>
-    <input type="password" name="user[password]">
-
-    <input type="submit" value="Log In!">
+    <label class='form-label'>Username:</label>
+    <input class='input' type="text" name="user[username]">
+    <label class='form-label'>Password:</label>
+    <input class='input' type="password" name="user[password]">
+    <input class="submit-button" type="submit" value="Log In!">
   </form>
 
 </section>
