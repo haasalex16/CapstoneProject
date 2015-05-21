@@ -7,6 +7,10 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
     this.listenTo(this.model, 'sync', this.addSongs);
   },
 
+  events: {
+    'click .play-button': 'playAll'
+  },
+
   render: function() {
     var view = this.template({playlist: this.model});
     this.$el.html(view);
@@ -24,6 +28,13 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   addSong: function(song){
     var songView = new EclecticEar.Views.SongPlaylistShow({model: song, collection: this.model.songs()});
     this.addSubview(".playlist-songs", songView);
+  },
+
+  playAll: function() {
+    EclecticEar.mediaView.queue = this.model._songs.models;
+    EclecticEar.mediaView.idx = 0;
+    EclecticEar.mediaView.play(this.model._songs.models[0]);
   }
+
 
 });

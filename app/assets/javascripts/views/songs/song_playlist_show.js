@@ -3,6 +3,10 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
 
   tagName: 'li',
 
+  events: {
+    'click .small-play-button': 'playMusic'
+  },
+
   className: 'playlist-song-show group',
 
   render: function() {
@@ -11,6 +15,12 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
 
     return this;
   },
+
+  playMusic: function() {
+    this.collection && (EclecticEar.mediaView.queue = this.collection.models);
+    EclecticEar.mediaView.idx = $('.playlist-song-show').index(this.$el);
+    EclecticEar.mediaView.play(this.model);
+  }
 
 
 });

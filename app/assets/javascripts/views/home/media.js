@@ -12,8 +12,6 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
 
     this.$('audio')[0].addEventListener('ended', this.nextSong.bind(this));
 
-    this.$('audio')[0].addEventListener('pause', this.hide.bind(this));
-
     return this;
   },
 
@@ -32,9 +30,9 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
     this.play(song);
   },
 
-  hide: function() {
-    $('.universal-player').removeClass('show');
-    $('.universal-player').addClass('hide');
-  }
+  // hide: function() {
+  //   $('.universal-player').removeClass('show');
+  //   $('.universal-player').addClass('hide');
+  // }
 
 });
