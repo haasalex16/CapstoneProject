@@ -11,6 +11,7 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     'search': 'search'
   },
 
+
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
   },

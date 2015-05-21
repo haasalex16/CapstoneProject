@@ -55,7 +55,7 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 			if (result instanceof EclecticEar.Models.User) {
 				view = new EclecticEar.Views.SearchUser({ model: result });
 			} else if (result instanceof EclecticEar.Models.Song) {
-				view = new EclecticEar.Views.SongShow({ model: result });
+				view = new EclecticEar.Views.SongShow({ model: result});
 			} else if (result instanceof EclecticEar.Models.Playlist) {
 				view = new EclecticEar.Views.SearchPlaylist({ model: result });
 			}

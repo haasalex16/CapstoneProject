@@ -4,7 +4,9 @@ window.EclecticEar = {
   Views: {},
   Routers: {},
   initialize: function(options) {
-    this.currentUser = new EclecticEar.Models.User({id: options.current_user_id});
+    this.currentUser = new EclecticEar.Models.User({id: options.current_user_id, queue: 0});
+    this.mediaView = new EclecticEar.Views.Media();
+    $('.backdrop').append(this.mediaView.render().$el);
     this.currentUser.fetch();
     new EclecticEar.Routers.Router({$rootEl: $('#main')});
     Backbone.history.start();
