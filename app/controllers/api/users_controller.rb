@@ -25,10 +25,24 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
+  def destroy
+    current_user.reset_session_token!
+    session[:session_token] = nil
+    @user = User.find(params[:id])
+    @user.destroy()
+    render json: @user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    render json: @user
+  end
+
   private
 
     def user_params
-      params.require(:user).permit(:username, :email, :password)
+      params.require(:user).permit(:username, :email, :password, :avatar, :city, :description)
     end
 
 end

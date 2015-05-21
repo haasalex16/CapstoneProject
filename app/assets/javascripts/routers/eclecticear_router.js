@@ -8,7 +8,8 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     "songs/:id/edit": 'editSong',
     "playlists/:id": 'showPlaylist',
     "playlists/:id/edit": 'editPlaylist',
-    'search': 'search'
+    'search': 'search',
+    'you/edit': 'userEdit'
   },
 
 
@@ -46,6 +47,13 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     EclecticEar.Collections.users.fetch();
 
     var view = new EclecticEar.Views.UsersIndex({collection: EclecticEar.Collections.users});
+
+    this._swapView(view);
+  },
+
+  userEdit: function() {
+    var user = EclecticEar.currentUser;
+    var view = new EclecticEar.Views.UserEdit({model: user});
 
     this._swapView(view);
   },

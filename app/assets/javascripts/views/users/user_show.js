@@ -1,6 +1,8 @@
 EclecticEar.Views.UserShow = Backbone.CompositeView.extend({
   template: JST['users/show'],
 
+  className: 'group',
+
   events: {
     'click .showFeed': 'showFeed',
     'click .showPlaylists': 'showPlaylists',

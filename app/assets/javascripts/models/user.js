@@ -24,7 +24,7 @@ EclecticEar.Models.User = Backbone.Model.extend({
     var json = {user: _.clone(this.attributes)};
 
     if (this._avatar) {
-      json.song.avatar = this._avatar;
+      json.user.avatar = this._avatar;
     }
 
     return json;

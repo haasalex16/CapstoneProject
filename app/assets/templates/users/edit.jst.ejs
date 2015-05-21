@@ -1,0 +1,20 @@
+
+<h2 class="user-username"><%= user.escape('username') %></h2>
+<img  class='user-thumb' src="<%= user.get('avatar_url') %>"/>
+
+
+<form class="edit-form">
+  <label class='form-label'>Name *</label>
+  <input class="input' type="text" name="username" value="<%= user.escape('username') %>">
+  <label class='form-label'>City</label>
+  <input class="input' type="text" name="city" value="<%= user.escape('city') %>">
+  <label class='form-label'>Description</label>
+  <input class="input' type="text" name="description" value="<%= user.escape('description') %>">
+
+  <label class='form-label'>Update User Image</label>
+  <input type="file" name="avatar" id="input-user-avatar">
+
+  <button class="submit-button">Save Changes</button>
+</form>
+
+<button class="delete-button">Delete Account</button>
