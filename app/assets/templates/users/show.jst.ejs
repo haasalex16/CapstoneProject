@@ -1,22 +1,23 @@
 <span class='user-show-header group'>
 
-  <h2> <%= user.escape('username') %> </h2>
+  <h2 class="user-username"> <%= user.escape('username') %> </h2>
   <img  class='user-thumb' src="<%= user.get('avatar_url') %>"/>
-  <p><%= user.escape('followers')%> Followers</p>
-  <p><%= user.songs().length %> Songs</p>
-  <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
-    <a href="">Edit User</a>
-  <% } else if (user.get("follow") === true)  { %>
-   <button class='unfollow'
-           data-id="<%=user.get('id') %>">
-           Unfollow
-   </button>
- <% } else { %>
-   <button class='follow'
-           data-id="<%=user.get('id') %>">
-           Follow
-   </button>
- <% } %>
+    <p class="result-bold"><%= user.escape('followers')%> Followers</p>
+    <p class="result-bold"><%= user.songs().length %> Songs</p>
+    <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
+      <a class="result-bold" href="">Edit User</a>
+    <% } %>
+    <% if (user.get("follow") === true)  { %>
+     <button class='unfollow'
+             data-id="<%=user.get('id') %>">
+             Unfollow
+     </button>
+   <% } else { %>
+     <button class='follow'
+             data-id="<%=user.get('id') %>">
+             Follow
+     </button>
+   <% } %>
 
 </span>
 
@@ -27,5 +28,3 @@
 </nav>
 
 <section class="user-content"> </section>
-
-</span>

@@ -1,12 +1,12 @@
 <% if (users.length === 0){ %>
-  <h2>Not Following Anyone</h2>
+  <h2 class="none">Not Following Anyone.  Find Some <a href="#/users">Users</a></h2>
 <% } else { %>
   <ul>
    <% users.each(function(user) { %>
      <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
        <% return; %>
       <% } %>
-     <li class='user-thumb'>
+     <li class='user-thumb' style="background-image: url(<%= user.get('avatar_url') %>)">
        <a href="#/users/<%=user.get('id')%>">
          <%= user.escape('username') %>
        </a>

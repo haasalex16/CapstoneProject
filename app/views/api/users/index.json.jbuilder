@@ -1,6 +1,7 @@
 json.array! @users do |user|
   json.id       user.id
   json.username user.username
+  json.avatar_url asset_path(user.avatar.url(:original))
   json.email    user.email
   json.follow   current_user.follow?(user)
   json.followers   user.followers do |follower|
