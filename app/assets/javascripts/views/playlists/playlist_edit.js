@@ -4,9 +4,9 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   className: 'playlist-edit group',
 
   initialize: function() {
-    this.addSongs();
+    // this.addSongs();
     this.listenTo(this.model, 'sync', this.render);
-    // this.listenTo(this.model, 'sync', this.addSongs);
+    this.listenTo(this.model, 'sync', this.addSongs);
   },
 
   events: {
@@ -25,7 +25,11 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   submit: function(event) {
     event.preventDefault();
     var attrs = this.$('.edit-form').serializeJSON();
-    this.model.save(attrs);
+    this.model.save(attrs,{
+      success: function() {
+        Backbone.history.navigate("#/playlists/"+ this.model.id,{trigger:true})
+      }.bind(this)
+    });
   },
 
   fileInputChange: function(event){

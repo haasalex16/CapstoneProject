@@ -1,11 +1,6 @@
 EclecticEar.Views.Media = Backbone.CompositeView.extend ({
   template: JST['home/media'],
 
-  events: {
-    'pause audio': 'test',
-    'click .universal-player-art': 'test'
-  },
-
   initialize: function() {
     this.idx = 0;
     this.queue = [];
@@ -16,6 +11,8 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
     this.$el.html(view);
 
     this.$('audio')[0].addEventListener('ended', this.nextSong.bind(this));
+
+    this.$('audio')[0].addEventListener('pause', this.hide.bind(this));
 
     return this;
   },
@@ -35,8 +32,9 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
     this.play(song);
   },
 
-  test: function() {
-    alert("test");
+  hide: function() {
+    $('.universal-player').removeClass('show');
+    $('.universal-player').addClass('hide');
   }
 
 });

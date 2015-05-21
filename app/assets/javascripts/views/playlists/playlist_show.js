@@ -22,7 +22,7 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   },
 
   addSong: function(song){
-    var songView = new EclecticEar.Views.SongPlaylistShow({model: song});
+    var songView = new EclecticEar.Views.SongPlaylistShow({model: song, collection: this.model.songs()});
     this.addSubview(".playlist-songs", songView);
   }
 

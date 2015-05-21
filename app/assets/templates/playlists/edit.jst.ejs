@@ -1,31 +1,29 @@
-<form class='edit-form'>
-  <div class="playlist-header group">
-    <div class="play-button">
-      <div class="arrow"></div>
+<div class="playlist-header group">
+  <form class='edit-form'>
+      <div class="play-button">
+        <div class="arrow"></div>
+      </div>
+    <section class="playlist-top-row">
+      <input class="playlist-name" type="text" name="title" value="<%= playlist.escape('title') %>">
+
+    </section>
+
+    <img class='cover-large' src="<%= playlist.get('cover_url') %>"/>
+
+
+
+    <div class="track-count">
+      <%= playlist.songs().length %>
+      <br>TRACKS
     </div>
-  <section class="playlist-top-row">
-    <input class="playlist-name" type="text" name="title" value="<%= playlist.escape('title') %>">
+    <section class="playlist-bottom-row">
+      <button class="edit-playlist left">Save Changes</button>
 
-  </section>
+      <input class="right" type="file" name="cover" id="input-playlist-cover">
+      </form>
+    </section>
 
-  <img class='cover-large' src="<%= playlist.get('cover_url') %>"/>
-
-
-
-  <div class="track-count">
-    <%= playlist.songs().length %>
-    <br>TRACKS
-  </div>
-  <section class="playlist-bottom-row">
-    <button class="edit-playlist left">Save Changes</button>
-
-    <input class="right" type="file" name="cover" id="input-playlist-cover">
-    </form>
-  </section>
-
-
-</form>
-
+  </form>
 </div>
 
 <ul class='playlist-songs'>

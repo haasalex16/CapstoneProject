@@ -11,7 +11,8 @@
   margin: 5px;
 }
 
-.playlist-header {
+.playlist-header,
+.playlist-songs {
   margin: auto;
   width: 600px;
 }
@@ -55,8 +56,8 @@
   color: white;
   border-radius: 50%;
   display: inline;
-  top: 140px;
-  left: 20px;
+  top: 180px;
+  left: 150px;
 }
 
 // playlist songs
@@ -64,6 +65,7 @@
 .album-art-thumb {
   height: 50px;
   width: 50px;
+  float:left;
 }
 
 .playlist-song-show {

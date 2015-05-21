@@ -1,23 +1,30 @@
 
-<header class="playlist-show-header">
+<div class="playlist-header group">
   <div class="play-button">
     <div class="arrow"></div>
   </div>
-  <h2 class="playlist-name"><%= playlist.escape('title') %></h2>
+  <section class="playlist-top-row">
+    <h1 class="playlist-name"><%= playlist.escape('title') %></h1>
+
+    <p class="result-bold right">
+      <%= playlist.timeSince(Date.parse(playlist.get('created_at'))) %>
+    </p>
+  </section>
+
+  <img class='cover-large' src="<%= playlist.get('cover_url') %>"/>
 
   <div class="track-count">
     <%= playlist.songs().length %>
     <br>TRACKS
   </div>
+  <section class="playlist-bottom-row">
+    <% if (playlist.get('user_id') === EclecticEar.currentUser.id) { %>
+      <a class='submit-button-left' href="#/playlists/<%= playlist.get('id') %>/edit">Edit</a>
+    <% }%>
+  </section>
 
-  <img class='album-art-large' src="<%= playlist.get('cover_url') %>"/>
+</div>
 
-  <p class="time-ago">
-    <%= playlist.timeSince(Date.parse(playlist.get('created_at'))) %>
-  </p>
-
-</header>
-
-<ul class='playlist-songs'>
+<ul class='playlist-songs group'>
 
 </ul>
