@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :playlists, only: [:create, :show, :update, :index, :destroy]
     resources :playlist_songs, only: [:create]
 
+    get "explore", to: "songs#explore"
+
   end
 end
