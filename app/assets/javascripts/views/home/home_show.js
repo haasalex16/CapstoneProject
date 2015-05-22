@@ -6,6 +6,10 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
     'click .showExplore' : 'showExplore'
   },
 
+  initialize: function() {
+    this.listenTo(EclecticEar.Collections.songs, 'remove', this.render);
+  },
+
   render: function() {
     var view = this.template();
     this.$el.html(view);
