@@ -17,6 +17,10 @@ class Song < ActiveRecord::Base
   has_attached_file :album_art, default_url: "cover.jpg"
   validates_attachment_content_type :album_art, :content_type => /\Aimage\/.*\Z/
 
+  Paperclip.options[:content_type_mappings] = {
+    :mp3 => "audio/mpeg"
+  }
+  
   has_attached_file :music
   do_not_validate_attachment_file_type :music
 end
