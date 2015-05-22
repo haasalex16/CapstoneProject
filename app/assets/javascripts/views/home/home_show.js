@@ -32,12 +32,12 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
     $('.showExplore').addClass('active');
     $('.showStream').removeClass('active');
     $.ajax({
-    url: "/api/explore",
-    type: "GET",
-    success: function (users) {
-      var collection = new EclecticEar.Collections.Songs(users);
-      var view = new EclecticEar.Views.SongsIndex({collection: collection});
-      this._swapView(view);
+      url: "/api/explore",
+      type: "GET",
+      success: function (users) {
+        var collection = new EclecticEar.Collections.Songs(users);
+        var view = new EclecticEar.Views.SongsIndex({collection: collection});
+        this._swapView(view);
     }.bind(this)
   });
   },

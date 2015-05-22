@@ -29,6 +29,7 @@ json.playlists @user.playlists do |playlist|
     json.created_at song.created_at
     json.taggings song.taggings do |tagging|
       json.id tagging.id
+      # .includes
       json.tag Tag.find(tagging.tag_id).title
       json.count Tag.find(tagging.tag_id).amount
     end

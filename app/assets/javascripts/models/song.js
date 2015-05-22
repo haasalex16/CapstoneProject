@@ -10,7 +10,6 @@ EclecticEar.Models.Song = Backbone.Model.extend ({
   },
 
   toJSON: function(){
-    // We want proper namespacing of our attributes in Rails.
     var json = {song: _.clone(this.attributes)};
 
     if (this._album_art) {

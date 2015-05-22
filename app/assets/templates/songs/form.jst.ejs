@@ -1,9 +1,10 @@
 <h1 class="form-header">Upload to EclecticEar!</h1>
 
-<label class= 'form-label'>Title</label>
-<input class='input' type="text" name="title">
-<input  type="file" name="music" id="input-music">
-<button class="submit-button right">Upload</button>
+<form enctype="multipart/form-data" action="/songs" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= token %>">
+  <label class='form-label'>Title</label>
+  <input class='input' type="text" name="song[title]">
+  <input  type="file" name="song[music]" id="input-music">
+  <button class="submit-button right">Upload</button>
 
-<div id="progressNumber"></div>
-<progress value="0" max="100"></progress>
+</form>

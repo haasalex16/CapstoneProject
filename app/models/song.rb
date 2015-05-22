@@ -19,5 +19,5 @@ class Song < ActiveRecord::Base
 
   has_attached_file :music
   validates_attachment :music,
-    :content_type => { :content_type => ["audio/mpeg", "audio/mp3", "audio/m4a"] }
+    :content_type => { :content_type => ["audio/mpeg", "audio/mp3", "audio/m4a", "application/octet-stream"] }
 end
