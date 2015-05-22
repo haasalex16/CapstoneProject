@@ -4,7 +4,7 @@ window.EclecticEar = {
   Views: {},
   Routers: {},
   initialize: function(options) {
-    this.currentUser = new EclecticEar.Models.User({id: options.current_user_id, queue: 0});
+    this.currentUser = new EclecticEar.Models.User({id: options.current_user_id});
     this.mediaView = new EclecticEar.Views.Media();
     $('.backdrop').append(this.mediaView.render().$el);
     this.currentUser.fetch();

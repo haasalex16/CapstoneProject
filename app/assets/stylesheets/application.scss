@@ -284,6 +284,16 @@ header {
 
 /*tag*/
 
+.tag {
+  color: white;
+  background: #FF5500;
+  padding: 3px 4px;
+  font-size: 14px;
+  border-radius: 10px;
+  float: left;
+  margin: 2px;
+}
+
 .tags {
   outline: 1px #CCCCCC solid;
   margin: 10px 0;

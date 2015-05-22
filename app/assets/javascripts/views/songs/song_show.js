@@ -11,7 +11,7 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser});
+    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser,  tags: this.model._taggings.models});
     this.$el.html(view);
     return this;
   },

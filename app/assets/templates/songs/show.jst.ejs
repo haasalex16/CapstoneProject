@@ -30,4 +30,9 @@
 </section>
 
 <section class="bottom-row">
+  <% tags.forEach(function(tag) { %>
+    <p class="tag">
+      <%= tag.escape('tag') %>
+    </p>
+  <% }) %>
 </section>
