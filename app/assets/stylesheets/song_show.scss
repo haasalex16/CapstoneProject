@@ -5,12 +5,32 @@
   margin: 10px 0 20px 0;
 }
 
-.play-button {
+.play-button,
+.stop-button {
   float: left;
   background: #FF5500;
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  cursor: pointer;
+}
+
+.play-button:hover .arrow {
+  border-left:15px solid white;
+}
+
+.stop-button:hover .stop {
+  background: white;
+}
+
+.stop {
+  margin: 0;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+	height: 20px;
+	background: black;
 }
 
 .arrow {

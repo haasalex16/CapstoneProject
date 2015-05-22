@@ -18,5 +18,5 @@ class Song < ActiveRecord::Base
   validates_attachment_content_type :album_art, :content_type => /\Aimage\/.*\Z/
 
   has_attached_file :music
-  validates_attachment_content_type :music, :content_type => /\Aaudio\/.*\Z/
+  validates_attachment_content_type :music, :content_type => [/\Aaudio\/.*\Z/, 'application/octet-stream']
 end

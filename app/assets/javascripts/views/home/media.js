@@ -24,15 +24,17 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
     $('.universal-player-title').html(song.get('title'));
   },
 
+  pause: function() {
+    $('.universal-player-player')[0].pause();
+    $('.universal-player').removeClass('show');
+    $('.universal-player').addClass('hide');
+  },
+
   nextSong: function() {
     this.idx++;
     var song = this.queue[this.idx];
     this.play(song);
   },
 
-  // hide: function() {
-  //   $('.universal-player').removeClass('show');
-  //   $('.universal-player').addClass('hide');
-  // }
 
 });

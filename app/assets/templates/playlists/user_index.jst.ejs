@@ -3,7 +3,7 @@
   <h1 class="none">No Playlists Yet</h1>
 <% } else { %>
   <% playlists.each(function(playlist){ %>
-    <div class="playlist-thumb">
+    <div class="playlist-thumb" style="background-image: url(<%= playlist.get('cover_url') %>)">
       <a class="playlist-thumb-title" href="#/playlists/<%= playlist.get('id') %>">
         <%= playlist.escape('title') %>
       </a>

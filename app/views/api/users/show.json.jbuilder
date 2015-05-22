@@ -17,6 +17,7 @@ end
 json.playlists @user.playlists do |playlist|
   json.id playlist.id
   json.title playlist.title
+  json.cover_url asset_path(playlist.cover.url(:original))
   json.created_at playlist.created_at
 
   json.songs playlist.songs do | song |

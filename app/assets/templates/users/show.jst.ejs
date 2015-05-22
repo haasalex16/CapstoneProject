@@ -4,8 +4,10 @@
   <img  class='user-thumb' src="<%= user.get('avatar_url') %>"/>
     <p class="result-bold"><%= user.escape('followers')%> Followers</p>
     <p class="result-bold"><%= user.songs().length %> Songs</p>
+    <p class="result-bold"><%= user.escape('city') %></p>
+    <p class="result-bold"><%= user.escape('description') %></p>
     <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
-      <a class="result-bold" href="#/you/edit">Edit User</a>
+      <a class="submit-button right" href="#/you/edit">Edit User</a>
     <% } %>
     <% if (user.get("follow") === true)  { %>
      <button class='unfollow'

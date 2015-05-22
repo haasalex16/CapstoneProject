@@ -91,6 +91,11 @@
   height: 40px;
   width: 40px;
   margin: 5px;
+  cursor: pointer;
+}
+
+.small-play-button:hover .small-arrow{
+  border-left: 15px solid white;
 }
 
 .small-arrow {
@@ -117,7 +122,8 @@
 .playlist-thumb {
   height: 190px;
   width: 190px;
-  background: #eee;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin: 10px;
   float: left
 }
