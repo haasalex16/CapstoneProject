@@ -25,7 +25,8 @@ EclecticEar.Views.PlaylistIndex = Backbone.CompositeView.extend ({
     });
     playlist_song.save({},{
       success: function() {
-        $('.playlist_song_modal').remove();
+        $('html').removeClass('no-scroll');
+        $('.modal').remove();
         Backbone.history.navigate("/playlists/"+playlist_id, {trigger: true});
       }
     })

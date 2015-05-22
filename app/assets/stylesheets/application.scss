@@ -373,6 +373,20 @@ header {
   height: 100%;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal {
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .close-modal {
   position: absolute;
   color: black;
@@ -406,7 +420,7 @@ header {
   width: 450px;
   background: #ffffff;
   z-index: 4;
-  height: 400px;
+  height: 300px;
 }
 
 .new-or-old-playlist {
@@ -454,4 +468,8 @@ header {
 .submit-button:hover,
 .delete-button:hover {
   background: black;
+}
+
+progress {
+  width: 300px;
 }

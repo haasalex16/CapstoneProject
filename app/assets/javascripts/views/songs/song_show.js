@@ -19,6 +19,7 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   addToPlaylist: function() {
     var playlistSong = new EclecticEar.Models.PlaylistSong({song_id: parseInt(this.model.get('id'))});
     var view = new EclecticEar.Views.PlaylistSongForm({playlist_song: playlistSong});
+    $('html').addClass('no-scroll');
     $('body').append(view.render().$el);
   },
 

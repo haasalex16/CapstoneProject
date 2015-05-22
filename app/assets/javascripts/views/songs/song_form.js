@@ -17,8 +17,27 @@ EclecticEar.Views.SongForm = Backbone.CompositeView.extend({
     return this;
   },
 
+  uploadProgress: function(evt) {
+    debugger;
+    if (evt.lengthComputable) {
+      var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+      document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+    }
+    else {
+      document.getElementById('progressNumber').innerHTML = 'unable to compute';
+    }
+  },
+
   submit: function(event) {
     event.preventDefault();
+
+    var xhr = new XMLHttpRequest();
+    // var fd = this.$el.getFormData();
+
+    /* event listners */
+    xhr.upload.addEventListener("progress", this.uploadProgress, false);
+
+
     var attrs = $(this.$el).serializeJSON();
     var song = this.model;
     var collection = this.collection;

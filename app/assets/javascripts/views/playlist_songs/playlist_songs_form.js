@@ -1,7 +1,7 @@
 EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
   template: JST['playlist_songs/form'],
 
-  className: 'playlist_song_modal',
+  className: 'modal',
 
   events: {
     'click .new-playlist': 'newPlaylist',
@@ -24,11 +24,15 @@ EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
   },
 
   newPlaylist: function() {
+    $('.newPlaylist').addClass('active');
+    $('.addPlaylist').removeClass('active');
     var view = new EclecticEar.Views.PlaylistForm({song_id: this.song_id});
     this._swapView(view);
   },
 
   addPlaylist: function() {
+    $('.addPlaylist').addClass('active');
+    $('.newPlaylist').removeClass('active');
     var view = new EclecticEar.Views.PlaylistIndex({
       song_id: this.song_id,
       collection: EclecticEar.Collections.userPlaylists
@@ -37,6 +41,7 @@ EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
   },
 
   closeModal: function() {
+    $('html').removeClass('no-scroll');
     this.$el.remove();
   },
 

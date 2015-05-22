@@ -7,8 +7,8 @@
 <ul>
   <% playlists.each(function(playlist) { %>
     <li class='result-bold'>
-    <%= playlist.escape('title') %>
     <button class="add-to-playlist" data-id="<%= playlist.id %>">Add to playlist</button>
+    <%= playlist.escape('title') %>
     </li>
   <% }) %>
 </ul>
