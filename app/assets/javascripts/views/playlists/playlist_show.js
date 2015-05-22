@@ -3,8 +3,7 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   className: 'playlist-show group',
 
   initialize: function() {
-    this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model, 'sync', this.addSongs);
+    this.listenTo(this.model, 'change', this.render);
   },
 
   events: {
@@ -12,6 +11,7 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    this.addSongs();
     var view = this.template({playlist: this.model});
     this.$el.html(view);
     this.attachSubviews();
