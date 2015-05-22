@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, h1, h2, nav, a, body, fieldset,
+html, body, h1, h2, nav, a, fieldset,
 header, ul, li, p, input, button, main,
 form {
   margin: 0;
@@ -44,12 +44,18 @@ ul {
 
 /*page*/
 
-body, html {
-  background-image: image-url("home-2.jpg"), image-url("home-2.jpg");
+body {
+  background-image: image-url("home-1.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   font-family: sans-serif;
-  padding: 1px;
 }
+
+html {
+  height: 100%;
+}
+
+
 
 .logged-in {
   background: #F2F2F2;
