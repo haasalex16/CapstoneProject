@@ -18,6 +18,6 @@ class Song < ActiveRecord::Base
   validates_attachment_content_type :album_art, :content_type => /\Aimage\/.*\Z/
 
   has_attached_file :music
-  validates_attachment :music,
-    :content_type => { :content_type => ["audio/mpeg", "audio/mp3", "audio/m4a", "application/octet-stream"] }
+  # validates_attachment :music,
+  #   :content_type => { :content_type => ["audio/mpeg", "audio/mp3", "audio/m4a", "application/octet-stream"] }
 end
