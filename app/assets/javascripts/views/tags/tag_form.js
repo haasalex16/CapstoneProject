@@ -29,6 +29,7 @@ EclecticEar.Views.TagForm = Backbone.CompositeView.extend ({
         tagging.save({},{
           success: function(tagging){
             this.song.taggings().add(tagging);
+            this.song.fetch();
           }.bind(this)
         });
         this.render();
