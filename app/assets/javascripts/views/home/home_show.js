@@ -1,18 +1,15 @@
 EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
   template: JST['home/show'],
 
-  initialize: function() {
-    this.showStream();
-  },
-
   events: {
     'click .showStream': 'showStream',
     'click .showExplore' : 'showExplore'
   },
 
   render: function() {
-    view = this.template();
+    var view = this.template();
     this.$el.html(view);
+    this.showStream();
 
     return this;
   },

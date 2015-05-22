@@ -12,13 +12,13 @@ EclecticEar.Views.UserShow = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(EclecticEar.currentUser, "sync", this.render);
-    this.listenTo(this.model, "sync", this.fillFeed);
-    this.showFeed();
+    this.listenTo(this.model.songs(), 'sync', this.render);
   },
 
   render: function() {
     var view = this.template({user: this.model});
     this.$el.html(view);
+    this.showFeed();
     return this;
   },
 
