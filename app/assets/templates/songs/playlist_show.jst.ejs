@@ -1,8 +1,21 @@
 <img class="album-art-thumb" src="<%= song.get('album_art_url') %>" />
 
-<div class="small-play-button">
-  <div class="small-arrow"></div>
-</div>
+<% if (edit) { %>
+  <section class="move-and-remove">
+    <div class="move">
+      1
+    </div>
+    <div class="remove">
+      x
+    </div>
+  </section>
+
+<% } else { %>
+  <div class="small-play-button">
+    <div class="small-arrow"></div>
+  </div>
+<% } %>
+
 
 <a class="playlist-song-owner" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %> - </a>
 

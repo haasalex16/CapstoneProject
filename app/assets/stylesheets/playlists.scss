@@ -150,3 +150,35 @@
   top: 50px;
   font-size: 12px;
 }
+
+// edit
+
+.move-and-remove {
+  color: white;
+  float: left;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.move {
+  text-align: center;
+  float: left;
+  margin-top: 5px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background: black;
+}
+
+.remove {
+  font-size: 12px;
+  text-align: center;
+  float: left;
+  background: #FF4D4D;
+  border-radius: 50%;
+  margin: 7px 0 5px 5px;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}

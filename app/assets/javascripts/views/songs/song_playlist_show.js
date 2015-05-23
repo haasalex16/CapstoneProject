@@ -9,8 +9,12 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
 
   className: 'playlist-song-show group',
 
+  initialize: function(options) {
+    this.edit = options.edit;
+  },
+
   render: function() {
-    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser});
+    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser, edit: this.edit});
     this.$el.html(view);
 
     return this;
