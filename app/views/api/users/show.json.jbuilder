@@ -1,19 +1,16 @@
-json.id @user.id
-json.username @user.username
-json.email @user.email
-json.city @user.city
-json.description @user.description
-json.avatar_url asset_path(@user.avatar.url(:original))
-json.followers @user.followers.count
+json.partial! "api/users/user", user: @user
+
 json.followees @user.followees do |followee|
   json.follow   current_user.follow?(followee)
   json.avatar_url asset_path(followee.avatar.url(:original))
   json.id followee.id
   json.username followee.username
 end
+
 json.songs @user.songs do | song |
   json.partial! "api/songs/song", song: song
 end
+
 json.playlists @user.playlists do |playlist|
   json.id playlist.id
   json.title playlist.title

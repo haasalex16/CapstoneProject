@@ -16,11 +16,14 @@ class Api::SongsController < ApplicationController
     ids = current_user.followees.map{|user| user.id}
     ids << current_user.id
     @songs = Song.where('user_id IN (?)', ids)
+      .includes(:user, :taggings, :tags)
     render :index
+    # render json: @songs
   end
 
   def explore
-    @songs = Song.limit(5).order("RANDOM()");
+    @songs = Song.limit(5).order("RANDOM()")
+      .includes(:user, :taggings, :tags)
     render :index
   end
 
