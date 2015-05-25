@@ -1,6 +1,10 @@
 EclecticEar.Models.Song = Backbone.Model.extend ({
   urlRoot: 'api/songs',
 
+  initialize: function() {
+    this.playing = false;
+  },
+
   parse: function(response) {
     if (response.taggings) {
       this.taggings().set(response.taggings);

@@ -11,13 +11,13 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
     'click .stop-button': 'stopMusic'
   },
 
+
   render: function() {
     var tags = [];
     if (this.model._taggings) {
       tags = this.model._taggings.models
     }
     // if (this.model.get('taggings')) {
-    //   debugger;
     //   tags = this.model.get('taggings');
     // }
     var view = this.template({song: this.model, currentUser: EclecticEar.currentUser,  tags: tags});
@@ -33,6 +33,7 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   },
 
   playMusic: function() {
+    // this.model.playing = true;
     $('.stop-button').addClass('play-button').removeClass('stop-button');
     this.$el.find('.play-button').addClass('stop-button').removeClass('play-button');
     this.collection && (EclecticEar.mediaView.queue = this.collection.models);
