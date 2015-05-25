@@ -19,8 +19,8 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
   },
 
   showStream: function() {
-    $('.showStream').addClass('active');
-    $('.showExplore').removeClass('active');
+    this.$('.showStream').addClass('active');
+    this.$('.showExplore').removeClass('active');
     EclecticEar.Collections.songs.fetch({
       success: function() {
         var view = new EclecticEar.Views.SongsIndex({collection: EclecticEar.Collections.songs});
@@ -30,8 +30,8 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
   },
 
   showExplore: function() {
-    $('.showExplore').addClass('active');
-    $('.showStream').removeClass('active');
+    this.$('.showExplore').addClass('active');
+    this.$('.showStream').removeClass('active');
     $.ajax({
       url: "/api/explore",
       type: "GET",
@@ -49,6 +49,6 @@ EclecticEar.Views.HomeShow = Backbone.CompositeView.extend ({
     }
 
     this.currentView = view;
-    $('.home-content').html(view.render().$el);
+    this.$('.home-content').html(view.render().$el);
   }
 });

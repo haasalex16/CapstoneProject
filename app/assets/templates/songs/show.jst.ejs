@@ -31,8 +31,8 @@
 
 <section class="bottom-row">
   <% tags.forEach(function(tag) { %>
-    <p class="tag">
+    <a class="tag" href="#/tags/<%= tag.get('id')%> ">
       <%= tag.escape('tag') %>
-    </p>
+    </a>
   <% }) %>
 </section>
