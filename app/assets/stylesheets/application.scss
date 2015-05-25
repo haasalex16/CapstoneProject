@@ -101,7 +101,8 @@ header {
 .header-list {
   float: right;
 }
-.header-list > li {
+.header-list > li ,
+.header-about {
   float: left;
   padding: 15px 20px;
 }

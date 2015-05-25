@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
-  before_action :require_signed_in!
+  before_action :require_signed_in!, only: [:root, :search]
 
   def root
+  end
+
+  def about
   end
 
 

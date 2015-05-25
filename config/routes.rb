@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :new, :destroy]
   resources :songs, only: [:create, :new]
   get "search", to: "static_pages#search"
+  get "about", to: "static_pages#about"
 
   namespace :api, defaults: {format: :json} do
     resources :songs

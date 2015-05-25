@@ -1,0 +1,17 @@
+
+
+<section class="about-page">
+  <h1 class='about-header'>About</h1>
+  <p class='about-description'>
+    EclecticEar is a <a class='about-link' href="https://soundcloud.com/">SoundCloud</a>
+    clone built on Rails and Backbone to highlight material covered during my 12 weeks at
+    <a class='about-link' href="http://www.appacademy.io/#p-home">AppAcademy</a>
+  </p>
+
+  <form class="tour-form" action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="user[username]" value="Guest">
+    <input type="hidden" name="user[password]" value="password">
+    <input class="submit-button left" type="submit" value="Take a Tour">
+  </form>
+</section>
