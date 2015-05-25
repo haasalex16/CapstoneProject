@@ -9,6 +9,12 @@ class Api::PlaylistSongsController < ApplicationController
     end
   end
 
+  def destroy
+    # @playlist = PlaylistSong.find(params[:id])
+    # @playlist.destroy
+    # render json: @playlist
+  end
+
   private
     def playlist_songs_params
         params.require(:playlist_song).permit(:song_id, :playlist_id, :order)

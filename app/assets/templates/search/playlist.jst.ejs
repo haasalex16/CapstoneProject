@@ -5,6 +5,6 @@
 
 <a class="result-bold" href="#/playlists/<%= playlist.id %>"><%= playlist.escape('title') %></a>
 
-<a class="result-light" href="#/users/<%= playlist.escape('user_id') %>"><%= playlist.escape('owner') %></a>
+<a class="result-light" href="#/users/<%= playlist.escape('user_id') %>"><%= playlist.get('owner').username %></a>
 
 <p class="info-small"> <%= playlist.escape('songs') %> Songs</p>

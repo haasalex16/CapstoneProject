@@ -34,7 +34,6 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
   },
 
   nextSong: function() {
-    debugger;
     $(this.items[this.idx]).find('.stop-button').removeClass('stop-button').addClass('play-button');
     this.idx++;
     $(this.items[this.idx]).find('.play-button').removeClass('play-button').addClass('stop-button');

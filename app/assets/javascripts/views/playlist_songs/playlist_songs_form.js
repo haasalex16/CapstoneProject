@@ -13,12 +13,12 @@ EclecticEar.Views.PlaylistSongForm = Backbone.CompositeView.extend({
     this.listenTo(EclecticEar.Collections.userPlaylists, 'sync', this.addPlaylist);
     this.song_id = options.playlist_song.get('song_id');
     EclecticEar.Collections.userPlaylists.fetch();
-    this.addPlaylist();
   },
 
   render: function() {
     view = this.template();
     this.$el.html(view);
+    this.addPlaylist();
 
     return this;
   },

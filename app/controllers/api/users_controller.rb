@@ -16,14 +16,13 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:playlists)
-                .includes(:songs)
-                .find(params[:id])
+    @user = User.includes(songs: :tags, playlists: {playlist_songs: {song: [:user, taggings: :tag]}}).find(params[:id])
     render :show
   end
 
   def index
-    @users = User.all
+    # make follows? not a n+1
+    @users = User.all.includes(:followers, :followees) 
     render :index
   end
 

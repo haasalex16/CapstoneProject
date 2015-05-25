@@ -21,7 +21,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.includes(:user, playlist_songs: {song: [:taggings, :user, :tags]}).find(params[:id])
     render :show
   end
 

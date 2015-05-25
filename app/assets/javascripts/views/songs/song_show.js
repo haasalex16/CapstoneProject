@@ -16,6 +16,10 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
     if (this.model._taggings) {
       tags = this.model._taggings.models
     }
+    // if (this.model.get('taggings')) {
+    //   debugger;
+    //   tags = this.model.get('taggings');
+    // }
     var view = this.template({song: this.model, currentUser: EclecticEar.currentUser,  tags: tags});
     this.$el.html(view);
     return this;
