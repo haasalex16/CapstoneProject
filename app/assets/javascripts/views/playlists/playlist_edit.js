@@ -4,10 +4,7 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   className: 'playlist-edit group',
 
   initialize: function() {
-    // this.addSongs();
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model, 'sync', this.addSongs);
-    this.listenTo(this.model.songs(), 'remove', this.render);
   },
 
   events: {
@@ -17,6 +14,7 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    this.addSongs();
     var view = this.template({playlist: this.model});
     this.$el.html(view);
     this.attachSubviews();
@@ -40,6 +38,18 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
     Backbone.history.navigate('#',{trigger: true})
   },
 
+  addSongs: function() {
+    this.model.songs().each(function(song){
+      this.addSong(song);
+    }.bind(this));
+  },
+
+  addSong: function(song){
+    var songView = new EclecticEar.Views.SongPlaylistShow({model: song,
+                                                          edit: true,
+                                                          collection: this.model});
+    this.addSubview(".playlist-songs", songView);
+  },
 
   fileInputChange: function(event){
     console.log(event.currentTarget.files[0]);
@@ -66,16 +76,4 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
   _updatePreview: function(src){
     this.$el.find(".cover-large").attr("src", src);
   },
-
-  addSongs: function() {
-    this.model.songs().each(function(song){
-      this.addSong(song);
-    }.bind(this));
-  },
-
-  addSong: function(song){
-    var songView = new EclecticEar.Views.SongPlaylistShow({model: song, edit: true});
-    this.addSubview(".playlist-songs", songView);
-  }
-
 });

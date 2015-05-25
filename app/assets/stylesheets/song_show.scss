@@ -8,41 +8,28 @@
 .play-button,
 .stop-button {
   float: left;
-  background: #FF5500;
+  background-image: image-url("play_stop_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  background-color: #FF5500;
   border-radius: 50%;
   height: 50px;
   width: 50px;
   cursor: pointer;
 }
 
-.play-button:hover .arrow {
-  border-left:15px solid white;
+.stop-button {
+  background-position: 12px 12px;
 }
 
-.stop-button:hover .stop {
-  background: white;
+.play-button {
+  background-position: -80px 12px;
 }
 
-.stop {
-  margin: 0;
-  position: relative;
-  top: 15px;
-  left: 15px;
-  width: 20px;
-	height: 20px;
-	background: black;
-}
+.play-button:hover,
+.stop-button:hover {
+  background-color: #949494;
 
-.arrow {
-  margin: 0;
-  position: relative;
-  top: 15px;
-  left: 20px;
-  width: 0;
-	height: 0;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left:15px solid black;
 }
 
 .album-art {

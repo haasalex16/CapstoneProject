@@ -27,7 +27,6 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
 
   pause: function() {
     $('.stop-button').addClass('play-button').removeClass('stop-button');
-    $('.stop').addClass('arrow').removeClass('stop');
     $('.universal-player-player')[0].pause();
     $('.universal-player').removeClass('show');
     $('.universal-player').addClass('hide');

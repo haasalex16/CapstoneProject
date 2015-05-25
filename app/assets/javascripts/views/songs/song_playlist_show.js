@@ -25,6 +25,8 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
   },
 
   playMusic: function() {
+    $('.small-stop-button').addClass('small-play-button').removeClass('small-stop-button');
+    this.$el.find('.small-play-button').addClass('small-stop-button').removeClass('small-play-button');
     this.collection && (EclecticEar.mediaView.queue = this.collection.models);
     EclecticEar.mediaView.idx = $('.playlist-song-show').index(this.$el);
     EclecticEar.mediaView.play(this.model);
@@ -36,7 +38,11 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
     var playlistSong = new EclecticEar.Models.PlaylistSong({id: id});
     playlistSong.fetch({
       success: function(model) {
-        model.destroy()
+        model.destroy({
+          success: function () {
+            that.collection.fetch();
+          }
+        })
       }
     })
   }

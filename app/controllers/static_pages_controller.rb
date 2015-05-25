@@ -9,9 +9,6 @@ class StaticPagesController < ApplicationController
     @search_results = PgSearch
       .multisearch(params[:query])
       .page(params[:page])
-
-      # .includes(:searchable)
-    # render json: @search_results
   end
 
 end

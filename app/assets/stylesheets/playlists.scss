@@ -84,30 +84,34 @@
   overflow: hidden;
 }
 
-.small-play-button {
+.small-play-button,
+.small-stop-button {
+  background-image: image-url("play_stop_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 95px 95px;
+  background-color: #FF5500;
+  border-radius: 50%;
+  cursor: pointer;
   float: left;
-  background: #FF5500;
   border-radius: 50%;
   height: 40px;
   width: 40px;
   margin: 5px;
-  cursor: pointer;
 }
 
-.small-play-button:hover .small-arrow{
-  border-left: 15px solid white;
+.small-play-button:hover {
+  background-color: #949494;
 }
 
-.small-arrow {
-  position: relative;
-  top: 10px;
-  left: 15px;
-  width: 0;
-	height: 0;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 15px solid black;
+.small-stop-button {
+  background-position: 10px 10px;
 }
+
+.small-play-button {
+  background-position: -63px 10px;
+}
+
+
 .playlist-song-owner {
   float: left;
   height: 18px;
