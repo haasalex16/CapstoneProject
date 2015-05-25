@@ -18,7 +18,6 @@ class Api::SongsController < ApplicationController
     @songs = Song.where('user_id IN (?)', ids)
       .includes(:user, :taggings, :tags)
     render :index
-    # render json: @songs
   end
 
   def explore

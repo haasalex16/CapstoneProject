@@ -30,9 +30,18 @@
 </section>
 
 <section class="bottom-row">
-  <% tags.forEach(function(tagging) { %>
-    <a class="tag" href="#/tags/<%= tagging.get('tag_id')%> ">
-      <%= tagging.escape('tag') %>
-    </a>
-  <% }) %>
+  <% if (tags) { %>
+    <% tags.forEach(function(tagging) { %>
+      <a class="tag" href="#/tags/<%= tagging.get('tag_id')%>">
+        <%= tagging.escape('tag') %>
+      </a>
+    <% }) %>
+  <% } %>
+  <% if (otherTags) { %>
+    <% otherTags.forEach(function(tagging) { %>
+      <a class="tag" href="#/tags/<%= tagging.tag_id%>">
+        <%= tagging.tag %>
+      </a>
+    <% }) %>
+  <% } %>
 </section>

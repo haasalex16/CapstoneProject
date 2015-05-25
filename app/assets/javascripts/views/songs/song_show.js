@@ -13,14 +13,15 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
 
 
   render: function() {
-    var tags = [];
+    var tags = null;
+    var otherTags = null;
     if (this.model._taggings) {
       tags = this.model._taggings.models
     }
-    // if (this.model.get('taggings')) {
-    //   tags = this.model.get('taggings');
-    // }
-    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser,  tags: tags});
+    if (this.model.get('taggings')) {
+      otherTags = this.model.get('taggings');
+    }
+    var view = this.template({song: this.model, currentUser: EclecticEar.currentUser,  tags: tags, otherTags: otherTags});
     this.$el.html(view);
     return this;
   },
