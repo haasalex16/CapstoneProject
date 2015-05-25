@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :taggings, only: [:create, :destroy, :index]
     resources :users, only: [:index, :show, :update, :destroy]
     resources :follows, only: [:create, :destroy, :index]
-    resources :tags, only: [:create, :destroy, :index]
+    resources :tags, only: [:create, :destroy, :index, :show]
     resources :playlists, only: [:create, :show, :update, :index, :destroy]
     resources :playlist_songs, only: [:create]
 

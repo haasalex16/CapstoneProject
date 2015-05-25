@@ -9,6 +9,11 @@ class Api::TagsController < ApplicationController
     render json: @tag
   end
 
+  def show
+    @tag = Tag.includes(songs: [:user, :taggings, :tags]).find(params[:id])
+    render :show
+  end
+
   def index
     @tags = Tag.all
     render :index
