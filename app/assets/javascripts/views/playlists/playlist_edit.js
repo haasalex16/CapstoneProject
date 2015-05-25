@@ -7,6 +7,7 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
     // this.addSongs();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addSongs);
+    this.listenTo(this.model.songs(), 'remove', this.render);
   },
 
   events: {

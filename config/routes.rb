@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy, :index]
     resources :tags, only: [:create, :destroy, :index, :show]
     resources :playlists, only: [:create, :show, :update, :index, :destroy]
-    resources :playlist_songs, only: [:create]
+    resources :playlist_songs, only: [:create, :show, :destroy]
 
     get "explore", to: "songs#explore"
 

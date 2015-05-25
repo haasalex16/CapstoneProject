@@ -9,10 +9,15 @@ class Api::PlaylistSongsController < ApplicationController
     end
   end
 
+  def show
+    @playlist_song = PlaylistSong.find(params[:id])
+    render json: @playlist_song
+  end
+
   def destroy
-    # @playlist = PlaylistSong.find(params[:id])
-    # @playlist.destroy
-    # render json: @playlist
+    @playlist_song = PlaylistSong.find(params[:id])
+    @playlist_song.destroy
+    render json: @playlist_song
   end
 
   private

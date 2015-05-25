@@ -76,6 +76,7 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
 
   editPlaylist: function(id) {
     var model = EclecticEar.Collections.userPlaylists.getOrFetch(id);
+    debugger;
     var view = new EclecticEar.Views.PlaylistEdit({model: model});
 
     this._swapView(view);

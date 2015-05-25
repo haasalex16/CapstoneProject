@@ -31,8 +31,14 @@ EclecticEar.Views.SongPlaylistShow = Backbone.CompositeView.extend({
   },
 
   removeSong: function(event) {
+    var that = this;
     var id = parseInt($(event.currentTarget).attr('data-playlist-song-id'));
-    alert('delete');
+    var playlistSong = new EclecticEar.Models.PlaylistSong({id: id});
+    playlistSong.fetch({
+      success: function(model) {
+        model.destroy()
+      }
+    })
   }
 
 
