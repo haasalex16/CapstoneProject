@@ -8,8 +8,8 @@
 <img class="album-art-large" src="<%= song.get('album_art_url') %>"/>
 
 <form class='edit-form'>
-  <label class='form-label'>Title *</label>
-  <input class="input' type="text" name="title" value="<%= song.escape('title') %>">
+  <label class='form-label' for="title">Title *</label>
+  <input class="input" type="text" id="title" name="title" value="<%= song.escape('title') %>">
   <p class='form-label'>
     Tags
   </p>
@@ -24,7 +24,7 @@
   </section>
 
 
-  <label class='form-label'>Update Art</label>
+  <label class='form-label' for="input-post-album_art">Update Art</label>
   <input type="file" name="album_art" id="input-post-album_art">
   <button class="submit-button left">Save Changes</button>
 </form>

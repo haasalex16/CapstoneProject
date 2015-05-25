@@ -4,14 +4,14 @@
 
 
 <form class="edit-form">
-  <label class='form-label'>Name *</label>
-  <input class="input' type="text" name="username" value="<%= user.escape('username') %>">
-  <label class='form-label'>City</label>
-  <input class="input' type="text" name="city" value="<%= user.escape('city') %>">
-  <label class='form-label'>Description</label>
-  <input class="input' type="text" name="description" value="<%= user.escape('description') %>">
+  <label class='form-label' for="username">Name *</label>
+  <input class="input" id="username" type="text" name="username" value="<%= user.escape('username') %>">
+  <label class='form-label' for="city" >City</label>
+  <input class="input" type="text" id="city" name="city" value="<%= user.escape('city') %>">
+  <label class='form-label' for="description">Description</label>
+  <input class="input" type="text" id="description" name="description" value="<%= user.escape('description') %>">
 
-  <label class='form-label'>Update User Image</label>
+  <label class='form-label' for="input-user-avatar">Update User Image</label>
   <input type="file" name="avatar" id="input-user-avatar">
 
   <button class="submit-button">Save Changes</button>

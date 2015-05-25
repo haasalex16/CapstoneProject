@@ -2,8 +2,8 @@
 
 <form enctype="multipart/form-data" action="/songs" method="post">
   <input type="hidden" name="authenticity_token" value="<%= token %>">
-  <label class='form-label'>Title</label>
-  <input class='input' type="text" name="song[title]">
+  <label class='form-label' for="title" >Title</label>
+  <input class='input' type="text" id="title" name="song[title]">
   <input  type="file" name="song[music]" id="input-music">
   <button class="submit-button right">Upload</button>
 
