@@ -30,9 +30,9 @@
 </section>
 
 <section class="bottom-row">
-  <% tags.forEach(function(tag) { %>
-    <a class="tag" href="#/tags/<%= tag.get('id')%> ">
-      <%= tag.escape('tag') %>
+  <% tags.forEach(function(tagging) { %>
+    <a class="tag" href="#/tags/<%= tagging.get('tag_id')%> ">
+      <%= tagging.escape('tag') %>
     </a>
   <% }) %>
 </section>

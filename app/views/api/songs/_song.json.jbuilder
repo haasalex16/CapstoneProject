@@ -12,6 +12,7 @@ end
 json.taggings song.taggings do |tagging|
   json.id tagging.id
   json.tag tagging.tag.title
+  json.tag_id tagging.tag.id
   # json.count tagging.tag.amount
 end
 
