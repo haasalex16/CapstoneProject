@@ -11,4 +11,11 @@
     <input class="submit-button right" type="submit" value="Log In!">
   </form>
 
+  <form class="guest-log-in" action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="user[username]" value="Guest">
+    <input type="hidden" name="user[password]" value="password">
+    <input class="submit-button left" type="submit" value="Log In as Guest">
+  </form>
+
 </section>
