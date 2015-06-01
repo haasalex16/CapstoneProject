@@ -33,8 +33,6 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
   },
 
   fileInputChange: function(event){
-    console.log(event.currentTarget.files[0]);
-
     var that = this;
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
@@ -42,7 +40,6 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
     reader.onloadend = function(){
       that._updatePreview(reader.result);
       that.model._avatar = reader.result;
-      console.log(that.model);
     }
 
     if (file) {
@@ -50,7 +47,6 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
     } else {
       that._updatePreview("");
       delete that.model._avatar;
-      console.log(that.model);
     }
   },
 

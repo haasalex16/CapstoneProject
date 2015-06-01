@@ -17,7 +17,6 @@ EclecticEar.Views.SongEdit = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    console.log('rendered');
     var view = this.template({song: this.model});
     this.$el.html(view);
     this.attachSubviews();

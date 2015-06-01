@@ -6,7 +6,6 @@ EclecticEar.Collections.SearchResults = Backbone.Collection.extend({
 
 	parse: function (response) {
 		this.searchInfo.totalPages = response.total_pages;
-    console.log(response);
 		return response.search_results;
 	},
 
