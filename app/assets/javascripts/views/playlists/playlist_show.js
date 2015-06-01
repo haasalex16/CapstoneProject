@@ -4,7 +4,6 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model, 'sync', this.addSongs);
   },
 
   events: {
@@ -12,22 +11,25 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    console.log("rednered");
+    // this.eachSubview(removeSubview);
     var view = this.template({playlist: this.model});
     this.$el.html(view);
-    this.attachSubviews();
 
+    this.model.songs().each(this.removeSongView.bind(this));
+    this.model.songs().each(this.addSongView.bind(this));
     return this;
   },
 
-  addSongs: function() {
-    this.model.songs().each(function(song){
-      this.addSong(song);
-    }.bind(this));
+  addSongView: function(song) {
+    var songView = new EclecticEar.Views.SongPlaylistShow({
+      model: song,
+      collection: this.model.songs()});
+    this.addSubview(".playlist-songs", songView);
   },
 
-  addSong: function(song){
-    var songView = new EclecticEar.Views.SongPlaylistShow({model: song, collection: this.model.songs()});
-    this.addSubview(".playlist-songs", songView);
+  removeSongView: function(song) {
+    this.removeModelSubview(".playlist-songs", song)
   },
 
   playAll: function() {
@@ -35,6 +37,4 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
     EclecticEar.mediaView.idx = 0;
     EclecticEar.mediaView.play(this.model._songs.models[0]);
   }
-
-
 });
