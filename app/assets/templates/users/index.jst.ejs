@@ -6,7 +6,7 @@
      <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
        <% return; %>
       <% } %>
-     <li class='user-thumb' style="background-image: image-url(<%= user.get('avatar_url') %>)">
+     <li class='user-thumb' style="background-image: url(<%= user.get('avatar_url') %>)">
        <a href="#/users/<%=user.get('id')%>">
          <%= user.escape('username') %>
        </a>
