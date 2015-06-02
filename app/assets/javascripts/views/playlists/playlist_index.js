@@ -11,7 +11,7 @@ EclecticEar.Views.PlaylistIndex = Backbone.CompositeView.extend ({
   },
 
   render: function(){
-    var view = this.template({playlists: this.collection});
+    var view = this.template({playlists: this.collection, song_id: this.song_id});
     this.$el.html(view);
 
     return this;
@@ -27,7 +27,10 @@ EclecticEar.Views.PlaylistIndex = Backbone.CompositeView.extend ({
       success: function() {
         $('html').removeClass('no-scroll');
         $('.modal').remove();
-        Backbone.history.navigate("/playlists/"+playlist_id, {trigger: true});
+        Backbone.history.navigate("/playlists/" + playlist_id, {trigger: true});
+      },
+      error: function(model, response) {
+        alert('error');
       }
     })
   }

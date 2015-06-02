@@ -4,7 +4,7 @@ class Api::PlaylistSongsController < ApplicationController
     if @playlist_song.save
       render json: @playlist_song
     else
-      flash[:errors] = @playlist_song.errors.full_messages
+      # flash[:errors] = @playlist_song.errors.full_messages
       render json: @playlist_song.errors, status: 422
     end
   end

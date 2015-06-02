@@ -32,10 +32,13 @@ EclecticEar.Views.PlaylistForm = Backbone.CompositeView.extend ({
             $('html').removeClass('no-scroll');
             $('.modal').remove();
             Backbone.history.navigate("/playlists/"+playlist_id, {trigger: true});
+          },
+          error: function() {
+            alert('errors');
           }
         })
       }.bind(this),
-      errors: function() {
+      error: function() {
         alert('errors');
       }
     })

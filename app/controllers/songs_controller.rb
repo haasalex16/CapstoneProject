@@ -6,7 +6,8 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to :back
     else
-      redirect_to :back
+      flash[:errors] = @song.errors.full_messages
+      redirect_to :root
     end
   end
 

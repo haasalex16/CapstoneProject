@@ -4,6 +4,7 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model.songs(), 'sync', this.render);
   },
 
   events: {
@@ -11,6 +12,7 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   },
 
   render: function() {
+    debugger;
     var view = this.template({playlist: this.model});
     this.$el.html(view);
 

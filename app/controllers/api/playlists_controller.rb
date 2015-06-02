@@ -16,8 +16,8 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = current_user.playlists
-    render json: @playlists
+    @playlists = current_user.playlists.includes(:playlist_songs)
+    render :index
   end
 
   def show

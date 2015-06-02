@@ -28,6 +28,19 @@ EclecticEar.Models.Playlist = Backbone.Model.extend({
     return this._songs;
   },
 
+  hasSong: function(song_id) {
+    this.result = false
+    this.song_id = song_id;
+    if (this.songs()) {
+      this.songs().each(function(song){
+        if (this.song_id === song.get('song_id')) {
+          this.result = true;
+        }
+      }.bind(this))
+    }
+    return this.result;
+  },
+
   timeSince: function(date) {
 
     var seconds = Math.floor((new Date() - date) / 1000);

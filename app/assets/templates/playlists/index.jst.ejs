@@ -6,9 +6,22 @@
 
 <ul>
   <% playlists.each(function(playlist) { %>
-    <li class='result-bold'>
-    <button class="add-to-playlist" data-id="<%= playlist.id %>">Add to playlist</button>
-    <%= playlist.escape('title') %>
-    </li>
+    <% if (playlist.hasSong(song_id)) { %>
+      <li class='result-bold'>
+      <%= playlist.escape('title') %>
+      <button class="in-playlist right"
+              data-id="<%= playlist.id %>" disabled>
+        already in playlist
+      </button>
+      </li>
+    <% } else { %>
+      <li class='result-bold'>
+      <%= playlist.escape('title') %>
+      <button class="add-to-playlist right"
+              data-id="<%= playlist.id %>">
+        Add to playlist
+      </button>
+      </li>
+    <% }%>
   <% }) %>
 </ul>

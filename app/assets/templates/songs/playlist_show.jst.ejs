@@ -14,14 +14,15 @@
   <div class="small-play-button">
   </div>
 <% } %>
+<% if (song.get('owner')) { %>
+  <a class="playlist-song-owner" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %> - </a>
 
+  <% if(currentUser.get('id') === song.get('owner').id){ %>
+    <a class='title' href="#/songs/<%= song.get('id') %>/edit">
+      <%= song.escape('title') %>
+    </a>
+  <%  } else { %>
+    <p class='title'><%= song.escape('title') %> </p>
+  <%  }%>
 
-<a class="playlist-song-owner" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %> - </a>
-
-<% if(currentUser.get('id') === song.get('owner').id){ %>
-  <a class='title' href="#/songs/<%= song.get('id') %>/edit">
-    <%= song.escape('title') %>
-  </a>
-<%  } else { %>
-  <p class='title'><%= song.escape('title') %> </p>
-<%  }%>
+<% } %>
