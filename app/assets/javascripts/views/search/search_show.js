@@ -51,6 +51,9 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 		$container.empty();
 
 		var view;
+		if (this.collection.length === 0) {
+			$container.append("<h1 class='none'>No Results</h1>");
+		}
 		this.collection.each(function (result) {
 			if (result instanceof EclecticEar.Models.User) {
 				view = new EclecticEar.Views.SearchUser({ model: result });

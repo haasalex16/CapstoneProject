@@ -12,7 +12,6 @@ EclecticEar.Views.PlaylistShow = Backbone.CompositeView.extend ({
   },
 
   render: function() {
-    debugger;
     var view = this.template({playlist: this.model});
     this.$el.html(view);
 
