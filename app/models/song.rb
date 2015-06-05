@@ -9,9 +9,9 @@ class Song < ActiveRecord::Base
   validates :music, :attachment_presence => true
 
   belongs_to :user
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings, source: :tag
-  has_many :playlist_songs
+  has_many :playlist_songs, dependent: :destroy
   has_many :playlists, through: :playlist_songs, source: :playlist
 
   has_attached_file :album_art, default_url: "cover.jpg"
