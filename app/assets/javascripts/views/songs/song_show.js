@@ -3,7 +3,7 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
 
   tagName: 'li',
 
-  className: 'song-show',
+  className: 'song-show-container',
 
   events: {
     'click .add-to-playlist': 'addToPlaylist',
@@ -34,17 +34,25 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   },
 
   playMusic: function() {
-    // this.model.playing = true;
+    $('.song-show').removeClass('song-show').addClass('song-show-list');
+    $('.album-art').removeClass('album-art').addClass('album-art-list');
+    $('.top-row').addClass('top-row-list').removeClass('top-row');
+    this.$el.find('.song-show-list').removeClass('song-show-list').addClass('song-show');
     $('.stop-button').addClass('play-button').removeClass('stop-button');
     this.$el.find('.play-button').addClass('stop-button').removeClass('play-button');
+    this.$el.find('.album-art-list').addClass('album-art').removeClass('album-art-list');
+    this.$el.find('.top-row-list').addClass('top-row').removeClass('top-row-list');
     this.collection && (EclecticEar.mediaView.queue = this.collection.models);
-    EclecticEar.mediaView.items = $('.song-show');
-    EclecticEar.mediaView.idx = $('.song-show').index(this.$el);
+    EclecticEar.mediaView.items = $('.song-show-container');
+    EclecticEar.mediaView.idx = $('.song-show-container').index(this.$el);
     EclecticEar.mediaView.play(this.model);
   },
 
   stopMusic: function() {
     this.$el.find('.stop-button').addClass('play-button').removeClass('stop-button');
+    this.$el.find('.album-art').addClass('album-art-list').removeClass('album-art');
+    this.$el.find('.top-row').addClass('top-row-list').removeClass('top-row');
+    this.$el.find('.song-show').removeClass('song-show').addClass('song-show-list');
     EclecticEar.mediaView.pause();
   }
 

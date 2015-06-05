@@ -1,47 +1,50 @@
-<img class="album-art" src='<%= song.get('album_art_url') %>'/>
+<section class='song-show-list'>
 
-<div class="play-button">
+  <img class="album-art-list" src='<%= song.get('album_art_url') %>'/>
 
-</div>
+  <div class="play-button">
 
-<section class=top-row>
-
-  <a class="result-light left" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
-
-  <div class="result-bold right">
-    <p>
-      <%= song.timeSince(Date.parse(song.get('created_at'))) %>
-    </p>
   </div>
-</section>
 
-<section class=top-row>
-  <% if(currentUser.get('id') === song.get('owner').id){ %>
-    <a class="result-bold left" href="#/songs/<%= song.get('id') %>/edit">
-      <%= song.escape('title') %>
-    </a>
-  <%  } else { %>
-    <p class="result-bold left"><%= song.escape('title') %> </p>
-  <%  }%>
-</section>
+  <section class=top-row-list>
 
-<section class="bottom-row">
-  <button class="add-to-playlist left">Add to playlist</button>
-</section>
+    <a class="result-light left" href="#/users/<%=song.get('owner').id %>"><%= song.get('owner').username %></a>
 
-<section class="bottom-row">
-  <% if (tags) { %>
-    <% tags.forEach(function(tagging) { %>
-      <a class="tag" href="#/tags/<%= tagging.get('tag_id')%>">
-        <%= tagging.escape('tag') %>
+    <div class="result-bold right">
+      <p>
+        <%= song.timeSince(Date.parse(song.get('created_at'))) %>
+      </p>
+    </div>
+  </section>
+
+  <section class=top-row-list>
+    <% if(currentUser.get('id') === song.get('owner').id){ %>
+      <a class="result-bold left" href="#/songs/<%= song.get('id') %>/edit">
+        <%= song.escape('title') %>
       </a>
-    <% }) %>
-  <% } %>
-  <% if (otherTags) { %>
-    <% otherTags.forEach(function(tagging) { %>
-      <a class="tag" href="#/tags/<%= tagging.tag_id%>">
-        <%= tagging.tag %>
-      </a>
-    <% }) %>
-  <% } %>
+    <%  } else { %>
+      <p class="result-bold left"><%= song.escape('title') %> </p>
+    <%  }%>
+  </section>
+
+  <section class="bottom-row">
+    <button class="add-to-playlist left">Add to playlist</button>
+  </section>
+
+  <section class="bottom-row">
+    <% if (tags) { %>
+      <% tags.forEach(function(tagging) { %>
+        <a class="tag" href="#/tags/<%= tagging.get('tag_id')%>">
+          <%= tagging.escape('tag') %>
+        </a>
+      <% }) %>
+    <% } %>
+    <% if (otherTags) { %>
+      <% otherTags.forEach(function(tagging) { %>
+        <a class="tag" href="#/tags/<%= tagging.tag_id%>">
+          <%= tagging.tag %>
+        </a>
+      <% }) %>
+    <% } %>
+  </section>
 </section>

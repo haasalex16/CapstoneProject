@@ -1,8 +1,19 @@
+.song-show-list {
+  float: left;
+  width: 630px;
+  height: 60px;
+  margin: 10px 0 20px 0;
+  overflow: hidden;
+  transition: height 1s;
+}
+
 .song-show {
   float: left;
   width: 630px;
   height: 130px;
   margin: 10px 0 20px 0;
+  overflow: hidden;
+  transition: height 1s;
 }
 
 .play-button,
@@ -38,6 +49,24 @@
   width: 120px;
   height: 120px;
   margin: 0 10px 10px 0;
+  transition: height 1s, width 1s;
+}
+
+.album-art-list {
+  float: left;
+  background: #bbb;
+  width: 60px;
+  height: 60px;
+  margin: 0 10px 10px 0;
+  transition: height 1s, width 1s;
+}
+
+.top-row-list {
+  float: left;
+  width: 505px;
+  height: 30px;
+  padding-left: 5px;
+  transition: width 1s;
 }
 
 .top-row {
@@ -45,6 +74,7 @@
   width: 445px;
   height: 30px;
   padding-left: 5px;
+  transition: width 1s;
 }
 
 .bottom-row {
