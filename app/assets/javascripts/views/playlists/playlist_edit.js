@@ -19,7 +19,9 @@ EclecticEar.Views.PlaylistEdit = Backbone.CompositeView.extend ({
     this.model.songs().each(this.removeSongView.bind(this));
     this.model.songs().each(this.addSongView.bind(this));
     $(function() {
-      $( "#sortable" ).sortable();
+      $( "#sortable" ).sortable({
+        handle: ".move"
+      });
       $( "#sortable" ).disableSelection();
     });
     return this;
