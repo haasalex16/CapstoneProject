@@ -198,10 +198,13 @@
   font-size: 12px;
   text-align: center;
   float: left;
-  background: #FF4D4D;
-  border-radius: 50%;
+  color: #FF4D4D;
   margin: 10px 0 5px 5px;
   height: 15px;
   width: 15px;
   cursor: pointer;
+}
+
+.remove:hover {
+  text-shadow: 2px 2px #bbbbbb;
 }
