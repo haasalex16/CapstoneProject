@@ -16,31 +16,77 @@
   transition: height 1s;
 }
 
-.play-button,
-.stop-button {
-  float: left;
-  background-image: image-url("play_stop_sprite.png");
-  background-repeat: no-repeat;
-  background-size: 120px 120px;
-  background-color: #FF5500;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
+.play-button{
+  position: absolute;
+  line-height: 1px;
+  // float: left;
+  z-index: 1;
+  opacity: 0;
+  padding: 5px 0 0 15px;;
+  // background-image: image-url("play_stop_sprite.png");
+  // background-repeat: no-repeat;
+  // background-size: 120px 120px;
+  // background-color: #FF5500;
+  // border-radius: 50%;
+  height: 55px;
+  width: 45px;
   cursor: pointer;
+  overflow: hidden;
+  transition: height 1s, width 1s, opacity .5s;
+}
+
+.fadein {
+  animation: fadein 1s;
 }
 
 .stop-button {
-  background-position: 12px 12px;
+  opacity: 0;
+  position: absolute;
+  line-height: 1px;
+  font-size: 20em;
+  overflow: hidden;
+  // float: left;
+  z-index: 1;
+  // background-color: green;
+  padding: 20px 0 0 25px;;
+  // background-image: image-url("play_stop_sprite.png");
+  // background-repeat: no-repeat;
+  // background-size: 120px 120px;
+  // background-color: #FF5500;
+  // border-radius: 50%;
+  height: 100px;
+  width: 95px;
+  cursor: pointer;
+  transition: opacity .5s;
+  // background-position: 12px 12px;
+  animation-duration: 4s;
+  animation-name: fadein;
 }
 
-.play-button {
-  background-position: -80px 12px;
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
-.play-button:hover,
+// .play-button {
+//   // background-position: -80px 12px;
+// }
+
+.song-show-list:hover .play-button,
 .stop-button:hover {
-  background-color: #949494;
-
+  opacity: .5;
+  transition: opacity .5s;
+  overflow: hidden;
 }
 
 .album-art {

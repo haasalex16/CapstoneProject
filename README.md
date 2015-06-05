@@ -40,3 +40,6 @@ EclecticEar is a social music site inspired by SoundCloud.  Built with a Backbon
 - [ ] Playcount on SongShow
 - [ ] Typeahead search bar
 - [ ] Repost other songs to your own stream/feed
+
+##Design Decisions
+* Created minimized song views for the default which expand to show more information when playing in order to keep more music on the screen at once.

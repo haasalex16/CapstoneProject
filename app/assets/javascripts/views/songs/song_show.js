@@ -37,7 +37,11 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
     $('.song-show').removeClass('song-show').addClass('song-show-list');
     $('.album-art').removeClass('album-art').addClass('album-art-list');
     $('.top-row').addClass('top-row-list').removeClass('top-row');
+    // $('.fa-stop').removeClass('fa-stop').addClass('fa-play');
+    // $('.fa-5x').removeClass('fa-5x').addClass('fa-3x');
     this.$el.find('.song-show-list').removeClass('song-show-list').addClass('song-show');
+    this.$el.find('.fa-play').removeClass('fa-play').addClass('fa-stop');
+    this.$el.find('.fa-3x').removeClass('fa-3x').addClass('fa-5x');
     $('.stop-button').addClass('play-button').removeClass('stop-button');
     this.$el.find('.play-button').addClass('stop-button').removeClass('play-button');
     this.$el.find('.album-art-list').addClass('album-art').removeClass('album-art-list');
@@ -49,6 +53,8 @@ EclecticEar.Views.SongShow = Backbone.CompositeView.extend({
   },
 
   stopMusic: function() {
+    this.$el.find('.fa-stop').removeClass('fa-stop').addClass('fa-play');
+    this.$el.find('.fa-5x').removeClass('fa-5x').addClass('fa-3x');
     this.$el.find('.stop-button').addClass('play-button').removeClass('stop-button');
     this.$el.find('.album-art').addClass('album-art-list').removeClass('album-art');
     this.$el.find('.top-row').addClass('top-row-list').removeClass('top-row');
