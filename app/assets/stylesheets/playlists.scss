@@ -73,7 +73,16 @@
   width: 600px;
   height: 50px;
   margin: 5px;
-  border: 2px solid black;
+  border: 2px solid #949494;
+  border-radius: 5px;
+}
+
+.playlist-title-row {
+  float: left;
+  width: 500px;
+  height: 20px;
+  overflow: hidden;
+  padding: 15px 0;
 }
 
 .title {
@@ -115,10 +124,14 @@
 .playlist-song-owner {
   float: left;
   height: 18px;
-  border: 1px solid #eee;
-  margin: 10px 0 0 10px;
-  overflow: hidden;
   color: #bbb;
+}
+
+.playlist-song-title {
+  padding-left: 2px;
+  float: left;
+  height: 18px;
+  color: black;
 }
 
 // playlist index
