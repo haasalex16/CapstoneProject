@@ -11,7 +11,7 @@ EclecticEar is a social music site inspired by SoundCloud.  Built with a Backbon
 * custom AJAX request to 'Explore' and pull 5 random tracks from the database
 * Tag songs with custom tags/genres and then able to show all tracks with the same tag
 * create custom playlists with all songs in database
-* search returns results from Username, Song Title, Playlist Title and then you can filter by result type
+* search returns results from Username, Song Title, Playlist Title and then you can filter by result type (search for 'bluth' to see all three types)
 * Add Avatar/Cover Art to users, playlists, and songs (stored on AWS)
 * Edit/Delete songs, playlists, and user profile
 
