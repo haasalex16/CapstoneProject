@@ -18,49 +18,29 @@
 
 .play-button{
   position: absolute;
-  line-height: 1px;
-  // float: left;
   z-index: 1;
   opacity: 0;
-  padding: 5px 0 0 15px;;
-  // background-image: image-url("play_stop_sprite.png");
-  // background-repeat: no-repeat;
-  // background-size: 120px 120px;
-  // background-color: #FF5500;
-  // border-radius: 50%;
+  padding: 5px 0 0 15px;
   height: 55px;
   width: 45px;
   cursor: pointer;
   overflow: hidden;
-  transition: height 1s, width 1s, opacity .5s;
-}
-
-.fadein {
-  animation: fadein 1s;
+  // transition: height 1s, width 1s, opacity .5s;
 }
 
 .stop-button {
   opacity: 0;
   position: absolute;
-  line-height: 1px;
-  font-size: 20em;
   overflow: hidden;
-  // float: left;
   z-index: 1;
-  // background-color: green;
   padding: 20px 0 0 25px;;
-  // background-image: image-url("play_stop_sprite.png");
-  // background-repeat: no-repeat;
-  // background-size: 120px 120px;
-  // background-color: #FF5500;
-  // border-radius: 50%;
   height: 100px;
   width: 95px;
   cursor: pointer;
-  transition: opacity .5s;
-  // background-position: 12px 12px;
-  animation-duration: 4s;
-  animation-name: fadein;
+}
+
+.fadein {
+  animation: fadein 4s;
 }
 
 @keyframes fadein {
@@ -77,10 +57,6 @@
     opacity: 0;
   }
 }
-
-// .play-button {
-//   // background-position: -80px 12px;
-// }
 
 .song-show-list:hover .play-button,
 .stop-button:hover {
@@ -109,7 +85,7 @@
 
 .top-row-list {
   float: left;
-  width: 505px;
+  width: 555px;
   height: 30px;
   padding-left: 5px;
   transition: width 1s;
@@ -117,7 +93,7 @@
 
 .top-row {
   float: left;
-  width: 445px;
+  width: 495px;
   height: 30px;
   padding-left: 5px;
   transition: width 1s;
@@ -144,7 +120,6 @@ audio {
 .add-to-playlist,
 .in-playlist {
   border: 1px solid #eee;
-  // margin: 2px;
   font-size: 10px;
   padding: 2px 5px;
   border-radius: 5px;
