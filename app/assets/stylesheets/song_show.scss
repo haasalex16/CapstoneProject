@@ -18,6 +18,8 @@
 
 .play-button{
   position: absolute;
+  color: black;
+  background-color: white;
   z-index: 1;
   opacity: 0;
   padding: 5px 0 0 15px;
@@ -25,23 +27,38 @@
   width: 45px;
   cursor: pointer;
   overflow: hidden;
-  transition: opacity .5s;
+  transition: width 1s, height 1s, padding 1s, opacity .5s;
 }
 
 .stop-button {
   opacity: 0;
   position: absolute;
+  color: black;
+  background-color: white;
   overflow: hidden;
   z-index: 1;
   padding: 20px 0 0 25px;;
   height: 100px;
   width: 95px;
   cursor: pointer;
-  transition: opacity .5s;
+  transition: width 1s, height 1s, padding 1s, opacity .5s;
 }
 
 .fadein {
   animation: fadein 4s;
+}
+
+.fadeout {
+  animation: fadeout 1s;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes fadein {
@@ -62,7 +79,7 @@
 .song-show-list:hover .play-button,
 .stop-button:hover {
   opacity: .5;
-  transition: opacity .5s;
+  transition: width 1s, height 1s, padding 1s, opacity .5s;
   overflow: hidden;
 }
 
