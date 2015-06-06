@@ -25,7 +25,7 @@
   width: 45px;
   cursor: pointer;
   overflow: hidden;
-  // transition: height 1s, width 1s, opacity .5s;
+  transition: opacity .5s;
 }
 
 .stop-button {
@@ -37,6 +37,7 @@
   height: 100px;
   width: 95px;
   cursor: pointer;
+  transition: opacity .5s;
 }
 
 .fadein {
