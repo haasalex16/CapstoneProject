@@ -5,17 +5,15 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  after_initialize :ensure_session_token
-
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  validates :session_token, presence: true, uniqueness: true
 
   has_attached_file :avatar, default_url: "default_avatar.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  has_many :sessions, dependent: :destroy
   has_many :songs, dependent: :destroy
   has_many :in_follows,
     class_name: 'Follow',
@@ -39,11 +37,7 @@ class User < ActiveRecord::Base
     user = User.find_by(username: username)
     return nil if user.nil?
 
-    if user.is_password? (password)
-      user
-    else
-      nil
-    end
+    user.is_password?(password) ? user : nil
   end
 
   def follow?(user)
@@ -64,12 +58,5 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-
-
-  private
-
-    def ensure_session_token
-      self.session_token ||= SecureRandom.urlsafe_base64(16)
-    end
 
 end

@@ -13,7 +13,6 @@ EclecticEar.Routers.Router = Backbone.Router.extend({
     'tags/:id': 'showTag'
   },
 
-
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
   },

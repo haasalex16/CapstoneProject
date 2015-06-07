@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def login_user!(user)
-    session[:session_token] = user.reset_session_token!
+    @current_user = user
+    @session = user.sessions.create()
+    session[:session_token] = @session.token
   end
 
   def logged_in?
@@ -16,12 +18,11 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return nil unless session[:session_token]
-    @current_user ||= User.find_by(session_token: session[:session_token])
+    @current_user ||= Session.find_user(session[:session_token])
   end
 
   def require_signed_in!
     redirect_to new_session_url  unless logged_in?
-
   end
 
 end
