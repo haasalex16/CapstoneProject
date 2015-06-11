@@ -11,49 +11,7 @@
 </head>
 <body>
 
-<header>
-  <nav class="header group">
-    <a class="header-logo" href="/#/">EclecticEar</a>
-    <a class="header-about" href="/about">About</a>
-    <ul class="header-list group">
-
-      <% if logged_in? %>
-      <li><a class="fa fa-search" id="search" title="Search" href="/#/search"></a></li>
-      <li><a href="/#/upload">Upload</a></li>
-      <li><a href="/#/users">Users</a></li>
-      <li>
-        <a href="#/users/<%= current_user.id%>" class="nav-links">
-          <%= current_user.username %>
-        </a>
-      </li>
-
-      <li>
-        <form action="<%=session_url%>"
-              method="post">
-          <input type="hidden" name="_method" value="DELETE">
-          <input  type="hidden"
-                  name="authenticity_token"
-                  value="<%= form_authenticity_token %>">
-          <button title="Log-Out" class="fa fa-sign-out"></button>
-        </form>
-      </li>
-
-      <% else %>
-      <li>
-        <a class="header-sign-in" href="<%=new_session_url%>">Sign In</a>
-      </li>
-      <li>or</li>
-      <li>
-        <a class="header-sign-up" href=" <%= new_user_url %> ">Sign Up</a>
-      </li>
-      <% end %>
-    </ul>
-  </nav>
-
-</header>
-
-<main class="content group">
-  <%= render "shared/errors" %>
+<main>
   <%= yield %>
 </main>
 

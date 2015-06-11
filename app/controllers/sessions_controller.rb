@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     @session = Session.find_by(token: session[:session_token])
     @session.destroy!
     @current_user = nil
-    redirect_to new_session_url
+    redirect_to root_url
   end
 
   def new

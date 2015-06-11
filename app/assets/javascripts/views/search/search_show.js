@@ -7,10 +7,14 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
   initialize: function () {
 		this.collection = new EclecticEar.Collections.SearchResults();
 		this.listenTo(this.collection, "sync", this.renderResults);
+		this.listenTo(EclecticEar.currentUser, 'search', this.search);
+		// $("#search-form").on("submit", function() {
+		// 		this.search();
+		// }.bind(this));
 	},
 
 	events: {
-		"submit form": "search",
+		// "submit form": "search",
 		"click .next-page": "nextPage",
 		'click .results-user': 'renderUserResults',
 		'click .results-all': 'renderResults',
@@ -26,9 +30,16 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 		return this;
 	},
 
+	bindHeader: function () {
+		$("#search-form").on("submit", function() {
+				this.search();
+		}.bind(this));
+	},
+
 	search: function (event) {
-		event.preventDefault();
-		var $input = this.$("#query");
+		  	console.log('searching!');
+		// event.preventDefault();
+		var $input = $("#query");
 		this.collection.searchInfo.query = $input.val();
 		this.collection.searchInfo.page = 1;
 
@@ -39,6 +50,7 @@ EclecticEar.Views.SearchShow = Backbone.CompositeView.extend({
 				console.log(that.collection.length);
 			}
 		});
+		$("input[type=text]").val("");
 	},
 
 	renderResults: function () {

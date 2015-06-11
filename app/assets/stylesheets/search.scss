@@ -47,9 +47,20 @@
   margin: auto;
   color: #000000;
   border-radius: 5px;
-  padding: 10px;
   display: block;
-  width: 500px;
+}
+
+.search-hide {
+  width: 0;
+  height: 0;
+  transition: width 1s, height 1s;
+}
+
+.search-show {
+  width: 100%;
+  height: 100%;
+  padding: 0px 5px;
+  transition: width 1s, height 1s, padding 1s;
 }
 
 .third {

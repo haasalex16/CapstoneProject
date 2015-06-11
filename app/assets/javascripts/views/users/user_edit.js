@@ -11,7 +11,6 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(EclecticEar.currentUser, "sync", this.render);
   },
 
   render: function() {
@@ -24,7 +23,11 @@ EclecticEar.Views.UserEdit = Backbone.CompositeView.extend({
   submit: function (event) {
     event.preventDefault();
     var attrs = this.$('.edit-form').serializeJSON();
-    this.model.save(attrs);
+    this.model.save(attrs, {
+      success: function() {
+        EclecticEar.currentUser.fetch();
+      }
+    });
   },
 
   removeUser: function (event) {

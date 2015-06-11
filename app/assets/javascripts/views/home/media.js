@@ -20,16 +20,14 @@ EclecticEar.Views.Media = Backbone.CompositeView.extend ({
     $('.universal-player-art')[0].setAttribute('src', song.get('album_art_url'));
     $('.universal-player-player')[0].setAttribute('src', song.get('music_url'));
     $('.universal-player-player')[0].play();
-    $('.universal-player').removeClass('hide');
-    $('.universal-player').addClass('show');
+    $('.universal-player').removeClass('hide').addClass('show');
     $('.universal-player-title').html(song.get('title'));
   },
 
   pause: function() {
     $('.stop-button').addClass('play-button').removeClass('stop-button').removeClass('fadein');
     $('.universal-player-player')[0].pause();
-    $('.universal-player').removeClass('show');
-    $('.universal-player').addClass('hide');
+    $('.universal-player').removeClass('show').addClass('hide');
   },
 
   nextSong: function() {

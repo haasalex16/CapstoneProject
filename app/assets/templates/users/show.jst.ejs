@@ -7,7 +7,7 @@
     <p class="result-bold"><%= user.escape('city') %></p>
     <p class="result-bold"><%= user.escape('description') %></p>
     <% if (user.get('id') === EclecticEar.currentUser.get('id')) { %>
-      <a class="submit-button left" href="#/you/edit">Edit User</a>
+      <a class="submit-button left" href="#/users/<%=user.get('id') %>/edit">Edit User</a>
     <% } %>
     <% if (user.get("follow") === true)  { %>
      <button class='unfollow'

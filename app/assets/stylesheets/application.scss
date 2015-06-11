@@ -171,13 +171,18 @@ header {
 /*body*/
 
 .content {
-  padding-top: 30px;
-  top: 50px;
+  padding-top: 70px;
+  // top: 50px;
   position: relative;
   width: 900px;
   margin: auto;
   margin-bottom: 60px;
-  // min-height: 100%;
+  // background: white;
+  // height: 80%;
+}
+
+main, .backdrop {
+  height: 100%;
 }
 
 .white {
@@ -191,6 +196,7 @@ header {
   padding: 15px;
   border-radius: 5px;
   border: 1px solid #8D7857;
+  // height: 230px;
 }
 
 .guest-log-in {

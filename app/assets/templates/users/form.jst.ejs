@@ -1,13 +1,11 @@
-
-<section class='sign-in-up group' >
+<section class='sign-in-up' >
   <h1 class="form-header">Join EclecticEar</h1>
 
-  <form class='group' action="<%= users_url %>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <form class='group'>
     <label class='form-label' for="email">Email:</label>
-    <input class='input' id="email" type="text" name="user[email]" value="<%= @user.email %>">
+    <input class='input' id="email" type="text" name="user[email]">
     <label class='form-label' for="username">Username:</label>
-    <input class='input' type="text" id="username" name="user[username]" value="<%= @user.username %>">
+    <input class='input' type="text" id="username" name="user[username]">
     <label class='form-label' for="password">Password:</label>
     <input class='input' type="password" id="password" name="user[password]">
     <input class="submit-button right" type="submit" value="Sign Up!">
